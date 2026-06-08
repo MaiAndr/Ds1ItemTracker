@@ -1,0 +1,3148 @@
+{
+  "version": "1.0",
+  "areas": [
+    {
+      "id": "boss_kills",
+      "name": "Boss Kills",
+      "items": [
+        {
+          "id": "boss_gaping_dragon",
+          "name": "Gaping Dragon",
+          "flagId": 2,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_bell_gargoyles",
+          "name": "Bell Gargoyles",
+          "flagId": 3,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_priscilla",
+          "name": "Crossbreed Priscilla",
+          "flagId": 4,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_sif",
+          "name": "Great Grey Wolf Sif",
+          "flagId": 5,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_pinwheel",
+          "name": "Pinwheel",
+          "flagId": 6,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_nito",
+          "name": "Gravelord Nito",
+          "flagId": 7,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_quelaag",
+          "name": "Chaos Witch Quelaag",
+          "flagId": 9,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_bed_of_chaos",
+          "name": "Bed of Chaos",
+          "flagId": 10,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_iron_golem",
+          "name": "Iron Golem",
+          "flagId": 11,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_ornstein_smough",
+          "name": "Ornstein and Smough",
+          "flagId": 12,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_four_kings",
+          "name": "Four Kings",
+          "flagId": 13,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_seath",
+          "name": "Seath the Scaleless",
+          "flagId": 14,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_gwyn",
+          "name": "Gwyn, Lord of Cinder",
+          "flagId": 15,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_asylum_demon",
+          "name": "Asylum Demon",
+          "flagId": 16,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_taurus_demon",
+          "name": "Taurus Demon",
+          "flagId": 11010901,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_capra_demon",
+          "name": "Capra Demon",
+          "flagId": 11010902,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_moonlight_butterfly",
+          "name": "Moonlight Butterfly",
+          "flagId": 11200900,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_sanctuary_guardian",
+          "name": "Sanctuary Guardian",
+          "flagId": 11210000,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_artorias",
+          "name": "Knight Artorias",
+          "flagId": 11210001,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_manus",
+          "name": "Manus, Father of the Abyss",
+          "flagId": 11210002,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_kalameet",
+          "name": "Black Dragon Kalameet",
+          "flagId": 11210004,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_demon_firesage",
+          "name": "Demon Firesage",
+          "flagId": 11410410,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_ceaseless_discharge",
+          "name": "Ceaseless Discharge",
+          "flagId": 11410900,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_centipede_demon",
+          "name": "Centipede Demon",
+          "flagId": 11410901,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_gwyndolin",
+          "name": "Dark Sun Gwyndolin",
+          "flagId": 11510900,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "boss_stray_demon",
+          "name": "Stray Demon",
+          "flagId": 11810900,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "boss_drops",
+      "name": "Boss Drops (item pickup)",
+      "items": [
+        {
+          "id": "drop_blighttown_key",
+          "name": "Blighttown Key (Gaping Dragon)",
+          "flagId": 50001500,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_key_to_depths",
+          "name": "Key to Depths (Capra Demon)",
+          "flagId": 50001510,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_priscilla",
+          "name": "Soul of Priscilla",
+          "flagId": 50001520,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_moonlight_butterfly",
+          "name": "Soul of Moonlight Butterfly",
+          "flagId": 50001530,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_sif",
+          "name": "Covenant of Artorias (Sif)",
+          "flagId": 50001540,
+          "verified": true,
+          "notes": "Pick up the Covenant of Artorias ring from Sif\u0027s drop"
+        },
+        {
+          "id": "drop_rite_of_kindling",
+          "name": "Rite of Kindling (Pinwheel)",
+          "flagId": 50001550,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_lord_soul_nito",
+          "name": "Lord Soul (Nito)",
+          "flagId": 50001560,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_soul_quelaag",
+          "name": "Soul of Quelaag",
+          "flagId": 50001570,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_lord_soul_boc",
+          "name": "Lord Soul (Bed of Chaos)",
+          "flagId": 50001580,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_core_iron_golem",
+          "name": "Core of an Iron Golem",
+          "flagId": 50001590,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_soul_gwyndolin",
+          "name": "Soul of Gwyndolin",
+          "flagId": 50001600,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_soul_ornstein",
+          "name": "Soul of Ornstein",
+          "flagId": 50001610,
+          "verified": true,
+          "notes": "Kill Ornstein last"
+        },
+        {
+          "id": "drop_soul_smough",
+          "name": "Soul of Smough",
+          "flagId": 50001620,
+          "verified": true,
+          "notes": "Kill Smough last"
+        },
+        {
+          "id": "drop_lord_soul_4kings",
+          "name": "Bequeathed Lord Soul Shard (Four Kings)",
+          "flagId": 50001630,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_lord_soul_seath",
+          "name": "Bequeathed Lord Soul Shard (Seath)",
+          "flagId": 50001640,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_soul_gwyn",
+          "name": "Soul of Gwyn",
+          "flagId": 50001650,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_orange_charred_ring",
+          "name": "Orange Charred Ring (Ceaseless)",
+          "flagId": 50001670,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_guardian_soul",
+          "name": "Guardian Soul (Sanctuary Guardian)",
+          "flagId": 50001680,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_soul_artorias",
+          "name": "Soul of Artorias",
+          "flagId": 50001690,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_soul_manus",
+          "name": "Soul of Manus",
+          "flagId": 50001700,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "drop_calamity_ring",
+          "name": "Calamity Ring (Kalameet tail)",
+          "flagId": 50001710,
+          "verified": true,
+          "notes": "Cut Kalameet\u0027s tail"
+        }
+      ]
+    },
+    {
+      "id": "northern_undead_asylum",
+      "name": "Northern Undead Asylum",
+      "items": [
+        {
+          "id": "asylum_rusted_iron_ring",
+          "name": "Rusted Iron Ring",
+          "flagId": 51810060,
+          "verified": true,
+          "notes": "Return visit"
+        },
+        {
+          "id": "asylum_lost_undead_soul",
+          "name": "Soul of a Lost Undead",
+          "flagId": 51810070,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "asylum_peculiar_doll",
+          "name": "Peculiar Doll",
+          "flagId": 51810080,
+          "verified": true,
+          "notes": "Only spawns on return visit via crow"
+        },
+        {
+          "id": "northern_undead_asylum_dungeon_cell_key_51810000",
+          "name": "Dungeon Cell Key",
+          "flagId": 51810000,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "firelink_shrine",
+      "name": "Firelink Shrine",
+      "items": [
+        {
+          "id": "fl_humanity",
+          "name": "Humanity - Firelink Well",
+          "flagId": 51020000,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_soul_graveyard_1",
+          "name": "Large Soul of a Lost Undead - Graveyard 1",
+          "flagId": 51020010,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_caduceus_shield",
+          "name": "Caduceus Round Shield",
+          "flagId": 51020020,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_soul_graveyard_2",
+          "name": "Large Soul of a Lost Undead - Graveyard 2",
+          "flagId": 51020030,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_soul_aqueduct",
+          "name": "Soul - Aqueduct Entrance",
+          "flagId": 51020040,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_soul_frampt",
+          "name": "Soul - Above Frampt",
+          "flagId": 51020050,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_soul_elevator",
+          "name": "Soul - Outside Firelink Elevator",
+          "flagId": 51020060,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_lloyds_talisman",
+          "name": "Lloyd\u0027s Talisman",
+          "flagId": 51020070,
+          "verified": true,
+          "notes": "Chest above Firelink, under elevator"
+        },
+        {
+          "id": "fl_soul_outside_frampt",
+          "name": "Soul - Outside Frampt",
+          "flagId": 51020090,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_firebomb",
+          "name": "Firebomb - Outside Petrus",
+          "flagId": 51020110,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_soul_aqueduct_cliff",
+          "name": "Soul - Aqueduct Cliff",
+          "flagId": 51020120,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_ring_of_sacrifice",
+          "name": "Ring of Sacrifice - Aqueduct",
+          "flagId": 51020130,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_soul_sewer",
+          "name": "Soul - Sewer Rat",
+          "flagId": 51020140,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_zweihander",
+          "name": "Zweihander",
+          "flagId": 51020150,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_winged_spear",
+          "name": "Winged Spear",
+          "flagId": 51020160,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_binoculars",
+          "name": "Binoculars",
+          "flagId": 51020170,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_morning_star",
+          "name": "Morning Star \u002B Talisman",
+          "flagId": 51020180,
+          "verified": true,
+          "notes": "Chest below elevator (Morning Star \u002B Talisman)"
+        },
+        {
+          "id": "fl_homeward_bone",
+          "name": "Homeward Bone - Firelink Elevator Drop",
+          "flagId": 51020190,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "fl_cracked_red_eye_orb",
+          "name": "Cracked Red Eye Orb",
+          "flagId": 51020200,
+          "verified": true,
+          "notes": "Chest below elevator"
+        },
+        {
+          "id": "fl_asylum_f2_west_key",
+          "name": "Undead Asylum F2 West Key",
+          "flagId": 51020210,
+          "verified": true,
+          "notes": "On the rooftop near the elevator"
+        }
+      ]
+    },
+    {
+      "id": "undead_burg",
+      "name": "Undead Burg (Upper)",
+      "items": [
+        {
+          "id": "ub_soul_barrel_drop",
+          "name": "Large Soul - Barrel Drop",
+          "flagId": 51010070,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ub_rubbish",
+          "name": "Rubbish",
+          "flagId": 51010080,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ub_light_crossbow",
+          "name": "Light Crossbow \u002B Standard Bolt",
+          "flagId": 51010090,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ub_humanity_entrance",
+          "name": "Humanity - Entrance Wall",
+          "flagId": 51010100,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ub_throwing_knife",
+          "name": "Throwing Knife",
+          "flagId": 51010120,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ub_wooden_shield",
+          "name": "Wooden Shield",
+          "flagId": 51010130,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ub_blue_tearstone",
+          "name": "Blue Tearstone Ring",
+          "flagId": 51010160,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ub_claymore",
+          "name": "Claymore",
+          "flagId": 51010210,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ub_soul_hellkite",
+          "name": "Soul - Hellkite Bridge",
+          "flagId": 51010220,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ub_black_firebombs",
+          "name": "Black Firebombs - Side House Chest",
+          "flagId": 51010450,
+          "verified": true,
+          "notes": "Chest in the house near the bonfire"
+        },
+        {
+          "id": "ub_gold_pine_resin",
+          "name": "Gold Pine Resin (Locked House)",
+          "flagId": 51010460,
+          "verified": true,
+          "notes": "Chest in locked house near Black Knight; needs Residence Key or Master Key"
+        },
+        {
+          "id": "ub_soul_firebombers",
+          "name": "Soul - Firebomb Throwers",
+          "flagId": 51010470,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ub_soul_after_tauros",
+          "name": "Soul - After Taurus",
+          "flagId": 51010480,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ub_soul_window",
+          "name": "Soul - Window Corpse",
+          "flagId": 51010400,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ub_soul_hallway",
+          "name": "Large Soul - Hallway to Depths",
+          "flagId": 51010430,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ub_soul_fogwall_house",
+          "name": "Soul - Fogwall House",
+          "flagId": 51010440,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "undead_parish",
+      "name": "Undead Parish",
+      "items": [
+        {
+          "id": "up_mystery_key",
+          "name": "Mystery Key",
+          "flagId": 51010000,
+          "verified": true,
+          "notes": "Lower corner of the Hollow room after the Boar"
+        },
+        {
+          "id": "up_mail_breaker",
+          "name": "Mail Breaker",
+          "flagId": 51010020,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "up_humanity_barrel",
+          "name": "Humanity - Parish Barrel",
+          "flagId": 51010040,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "up_fire_keeper_soul",
+          "name": "Fire Keeper Soul - Undead Parish",
+          "flagId": 51010050,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "up_basement_key",
+          "name": "Basement Key",
+          "flagId": 51010140,
+          "verified": true,
+          "notes": "Just after the portcullis"
+        },
+        {
+          "id": "up_alluring_skull",
+          "name": "Alluring Skull",
+          "flagId": 51010260,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "up_soul_rafters",
+          "name": "Large Soul - Hollow Room Rafters",
+          "flagId": 51010280,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "up_knight_shield",
+          "name": "Knight Shield",
+          "flagId": 51010300,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "up_soul_window",
+          "name": "Large Soul - Parish Window",
+          "flagId": 51010500,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "up_halberd",
+          "name": "Halberd",
+          "flagId": 51010520,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "up_sorcerer_set",
+          "name": "Sorcerer Set \u002B Catalyst",
+          "flagId": 51010510,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "lower_undead_burg",
+      "name": "Lower Undead Burg",
+      "items": [
+        {
+          "id": "lub_soul_capra",
+          "name": "Large Soul - Barrel outside Capra",
+          "flagId": 51010370,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "lub_thief_set",
+          "name": "Thief Mask \u002B Black Leather Set",
+          "flagId": 51010380,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "lub_twin_humanities",
+          "name": "Twin Humanities - Torch Hollows",
+          "flagId": 51010490,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "the_depths",
+      "name": "The Depths",
+      "items": [
+        {
+          "id": "dep_humanity_pitfall",
+          "name": "Humanity - Pitfall Jump",
+          "flagId": 51000000,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_soul_hallways_1",
+          "name": "Soul - Depths Hallways 1",
+          "flagId": 51000010,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_greataxe",
+          "name": "Greataxe",
+          "flagId": 51000020,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_soul_ooze_trap",
+          "name": "Soul - Ooze Trap",
+          "flagId": 51000030,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_soul_entrance",
+          "name": "Large Soul - Depths Entrance",
+          "flagId": 51000040,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_soul_basilisks",
+          "name": "Large Soul - Depths Basilisks",
+          "flagId": 51000050,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_spider_shield",
+          "name": "Spider Shield - Ledge near Giant Rat",
+          "flagId": 51000090,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_large_titanite",
+          "name": "Large Titanite Shard - Channeler",
+          "flagId": 51000100,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_soul_rat_entrance",
+          "name": "Soul - Giant Rat Room Entrance",
+          "flagId": 51000120,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_soul_rat",
+          "name": "Soul - Giant Rat",
+          "flagId": 51000140,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_ring_evil_eye",
+          "name": "Ring of the Evil Eye",
+          "flagId": 51000170,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_soul_hallways_2",
+          "name": "Soul - Depths Hallways 2",
+          "flagId": 51000180,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_heavy_crossbow",
+          "name": "Heavy Crossbow \u002B Heavy Bolt",
+          "flagId": 51000190,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_standard_set",
+          "name": "Standard Helm \u002B Hard Leather Set",
+          "flagId": 51000210,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dep_sewer_key",
+          "name": "Sewer Chamber Key",
+          "flagId": 51000240,
+          "verified": true,
+          "notes": "Leaning against bars near the Giant Rat"
+        },
+        {
+          "id": "dep_large_ember",
+          "name": "Large Ember",
+          "flagId": 51000500,
+          "verified": true,
+          "notes": "Chest near the Butcher"
+        }
+      ]
+    },
+    {
+      "id": "darkroot_garden",
+      "name": "Darkroot Garden / Forest / Basin",
+      "items": [
+        {
+          "id": "dg_partizan",
+          "name": "Partizan",
+          "flagId": 51200010,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_leather_set",
+          "name": "Leather Armor \u002B Longbow",
+          "flagId": 51200020,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_soul_cliff",
+          "name": "Large Soul - Darkroot Cliff",
+          "flagId": 51200030,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_soul_hydra",
+          "name": "Large Soul - Darkroot Hydra",
+          "flagId": 51200040,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_wolf_ring",
+          "name": "Wolf Ring",
+          "flagId": 51200060,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_elite_knight_set",
+          "name": "Elite Knight Set",
+          "flagId": 51200070,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_eastern_set",
+          "name": "Eastern Armor Set",
+          "flagId": 51200080,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_soul_cats",
+          "name": "Large Soul - Darkroot Garden Cats",
+          "flagId": 51200120,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_watchtower_key",
+          "name": "Watchtower Basement Key",
+          "flagId": 51200140,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_divine_ember",
+          "name": "Divine Ember",
+          "flagId": 51200141,
+          "verified": true,
+          "notes": "Same corpse as Watchtower Key \u2014 part of 3-item drop"
+        },
+        {
+          "id": "dg_homeward_bone",
+          "name": "Homeward Bone - Frozen Blacksmith",
+          "flagId": 51200142,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_antiquated_set",
+          "name": "Crown of Dusk \u002B Antiquated Set",
+          "flagId": 51200150,
+          "verified": true,
+          "notes": "Dusk of Oolacile\u0027s location in Darkroot Basin"
+        },
+        {
+          "id": "dg_hornet_ring",
+          "name": "Hornet Ring",
+          "flagId": 51200160,
+          "verified": true,
+          "notes": "Near Sif\u0027s grave"
+        },
+        {
+          "id": "dg_soul_ambush",
+          "name": "Large Soul - Darkroot Ambush",
+          "flagId": 51200170,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_enchanted_ember",
+          "name": "Enchanted Ember (Chest)",
+          "flagId": 51200500,
+          "verified": true,
+          "notes": "Chest in pool of water surrounded by Mushroom enemies"
+        },
+        {
+          "id": "dg_stone_set",
+          "name": "Stone Armor Set (Chest)",
+          "flagId": 51200510,
+          "verified": true,
+          "notes": "Behind stone tower just before Sif"
+        },
+        {
+          "id": "dg_soul_fake_trees",
+          "name": "Soul - Past Fake Trees",
+          "flagId": 51200180,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_soul_ladder",
+          "name": "Soul - Down Ladder Stone Bridge",
+          "flagId": 51200190,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_grass_crest",
+          "name": "Grass Crest Shield",
+          "flagId": 51200200,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dg_knight_set",
+          "name": "Knight Set",
+          "flagId": 51200210,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "painted_world",
+      "name": "Painted World of Ariamis",
+      "items": [
+        {
+          "id": "pw_soul_1",
+          "name": "Soul of a Proud Knight #1",
+          "flagId": 51100010,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_albino",
+          "name": "Soul - Albino Rats",
+          "flagId": 51100030,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_4",
+          "name": "Large Soul - PW #1",
+          "flagId": 51100040,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_twin_humanities",
+          "name": "Twin Humanities",
+          "flagId": 51100050,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_velka_set",
+          "name": "Mask of Velka \u002B Black Cleric Set",
+          "flagId": 51100060,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_brave",
+          "name": "Soul of a Brave Warrior #1",
+          "flagId": 51100070,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_vow_of_silence",
+          "name": "Miracle: Vow of Silence",
+          "flagId": 51100090,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_gold_coin",
+          "name": "Gold Coin",
+          "flagId": 51100100,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_bonewheels",
+          "name": "Soul - Bonewheels",
+          "flagId": 51100120,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_bonewheels_2",
+          "name": "Soul - Bonewheels #2",
+          "flagId": 51100130,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_annex_key",
+          "name": "Annex Key",
+          "flagId": 51100140,
+          "verified": true,
+          "notes": "End of underground passage; guarded by Bonewheel Skeleton"
+        },
+        {
+          "id": "pw_xanthous_set",
+          "name": "Xanthous Crown \u002B Set",
+          "flagId": 51100150,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_ring_of_sacrifice",
+          "name": "Ring of Sacrifice",
+          "flagId": 51100160,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_courtyard",
+          "name": "Soul - Painted World Courtyard",
+          "flagId": 51100170,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_acid_surge",
+          "name": "Pyromancy: Acid Surge",
+          "flagId": 51100190,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_bloodshield",
+          "name": "Bloodshield",
+          "flagId": 51100200,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_undead_dragon",
+          "name": "Large Soul - Undead Dragon",
+          "flagId": 51100210,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_humanity_courtyard",
+          "name": "Humanity - Courtyard",
+          "flagId": 51100230,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_humanity_hanging",
+          "name": "Humanity - Hanging Body",
+          "flagId": 51100240,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_egg_vermifuge",
+          "name": "Egg Vermifuge",
+          "flagId": 51100250,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_corvid_ambush",
+          "name": "Soul - Corvid Ambush",
+          "flagId": 51100260,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_jeremiah_1",
+          "name": "Soul - Jeremiah #1",
+          "flagId": 51100280,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_ambush",
+          "name": "Soul - Painted World Ambush",
+          "flagId": 51100290,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_jeremiah_2",
+          "name": "Large Soul - Jeremiah",
+          "flagId": 51100300,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_jeremiah_3",
+          "name": "Soul - Jeremiah #3",
+          "flagId": 51100310,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_velkas_rapier",
+          "name": "Velka\u0027s Rapier",
+          "flagId": 51100320,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_red_sign_soapstone",
+          "name": "Red Sign Soapstone",
+          "flagId": 51100330,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_brave_2",
+          "name": "Soul of a Brave Warrior #2",
+          "flagId": 51100340,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_soul_tower",
+          "name": "Soul - PW Tower",
+          "flagId": 51100350,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_dark_ember",
+          "name": "Dark Ember (Andre Statue/Annex)",
+          "flagId": 51100370,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "pw_painting_guardian_set",
+          "name": "Painting Guardian Set (Chest)",
+          "flagId": 51100500,
+          "verified": true,
+          "notes": "Basement of second large building"
+        },
+        {
+          "id": "pw_fire_surge",
+          "name": "Pyromancy: Fire Surge",
+          "flagId": 51100980,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "catacombs",
+      "name": "The Catacombs",
+      "items": [
+        {
+          "id": "cat_soul_1",
+          "name": "Large Soul - Catacombs 1",
+          "flagId": 51300000,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cat_soul_proud_3",
+          "name": "Soul of a Proud Knight #3",
+          "flagId": 51300010,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cat_darkmoon_seance",
+          "name": "Darkmoon Seance Ring",
+          "flagId": 51300020,
+          "verified": true,
+          "notes": "Coffin past falling Giant Skeleton; smash obvious wall"
+        },
+        {
+          "id": "cat_eye_of_death",
+          "name": "Eye of Death - Titanite Demon",
+          "flagId": 51300030,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cat_lucerne",
+          "name": "Lucerne",
+          "flagId": 51300070,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cat_green_titanite",
+          "name": "Green Titanite Shard - Near Vamos",
+          "flagId": 51300100,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cat_great_scythe",
+          "name": "Great Scythe",
+          "flagId": 51300110,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cat_soul_2",
+          "name": "Large Soul - Catacombs 2",
+          "flagId": 51300140,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cat_soul_proud_4",
+          "name": "Soul of a Proud Knight #4",
+          "flagId": 51300150,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cat_priest_set",
+          "name": "Priest\u0027s Hat \u002B Holy Set \u002B Mace",
+          "flagId": 51300190,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cat_soul_above_pin",
+          "name": "Soul - Above Pinwheel",
+          "flagId": 51300210,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cat_soul_bonewheels",
+          "name": "Large Soul - Above Bonewheels",
+          "flagId": 51300220,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cat_tranquil_walk",
+          "name": "Miracle: Tranquil Walk of Peace",
+          "flagId": 51300230,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cat_soul_proud_1",
+          "name": "Soul of a Proud Knight #1",
+          "flagId": 51300240,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cat_soul_proud_2",
+          "name": "Soul of a Proud Knight #2",
+          "flagId": 51300250,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "tomb_of_giants",
+      "name": "Tomb of Giants",
+      "items": [
+        {
+          "id": "tog_large_soul_1",
+          "name": "Large Soul of a Proud Knight #1",
+          "flagId": 51310000,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_large_soul_2",
+          "name": "Large Soul of a Proud Knight #2",
+          "flagId": 51310010,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_humanity_ledge",
+          "name": "Humanity - Corpse on Ledge",
+          "flagId": 51310020,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_soul_patches_1",
+          "name": "Large Soul - Patches Pit 1",
+          "flagId": 51310030,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_soul_lower_coffin",
+          "name": "Soul - Lower Giant Coffin",
+          "flagId": 51310040,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_soul_patches_2",
+          "name": "Large Soul - Patches Pit 2",
+          "flagId": 51310050,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_soul_upper_coffin",
+          "name": "Large Soul - Upper Giant Coffin",
+          "flagId": 51310070,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_eye_of_death",
+          "name": "Eye of Death - Upper Giant Coffin",
+          "flagId": 51310080,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_skull_lantern",
+          "name": "Skull Lantern",
+          "flagId": 51310090,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_white_chunk_patches",
+          "name": "White Titanite Chunk - Patches Kick",
+          "flagId": 51310100,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_soul_lower_1",
+          "name": "Soul - Lower Tomb 1",
+          "flagId": 51310110,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_effigy_shield",
+          "name": "Effigy Shield",
+          "flagId": 51310120,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_silver_serpent_ring",
+          "name": "Covetous Silver Serpent Ring",
+          "flagId": 51310140,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_white_chunk_lower",
+          "name": "White Titanite Chunk - Lower Tomb",
+          "flagId": 51310160,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_soul_lower_2",
+          "name": "Soul - Lower Tomb 2",
+          "flagId": 51310180,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_soul_hero_1",
+          "name": "Soul of a Hero",
+          "flagId": 51310200,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_white_slab",
+          "name": "White Titanite Slab - Outside Nito",
+          "flagId": 51310220,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_soul_hero_nito",
+          "name": "Soul of a Hero - Outside Nito",
+          "flagId": 51310230,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_paladin_leeroy_set",
+          "name": "Paladin Helm \u002B Set (Leeroy)",
+          "flagId": 51310240,
+          "verified": true,
+          "notes": "Dropped by NPC Paladin Leeroy"
+        },
+        {
+          "id": "tog_white_chunk_nito",
+          "name": "White Titanite Chunk - Outside Nito",
+          "flagId": 51310290,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_soul_coffin_drop",
+          "name": "Large Soul - Giant Coffin Drop",
+          "flagId": 51310300,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "tog_large_divine_ember",
+          "name": "Large Divine Ember",
+          "flagId": 51310500,
+          "verified": true,
+          "notes": "Room near first bonfire with Giant Skeletons"
+        }
+      ]
+    },
+    {
+      "id": "great_hollow_ash_lake",
+      "name": "Great Hollow / Ash Lake",
+      "items": [
+        {
+          "id": "gh_plank_shield",
+          "name": "Plank Shield",
+          "flagId": 51320000,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "gh_cloranthy_ring",
+          "name": "Cloranthy Ring",
+          "flagId": 51320020,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "gh_titanite_chunk_1",
+          "name": "Titanite Chunk - Great Hollow 1",
+          "flagId": 51320040,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "gh_soul",
+          "name": "Large Soul - Great Hollow",
+          "flagId": 51320050,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "gh_blue_chunk",
+          "name": "Blue Titanite Chunk",
+          "flagId": 51320060,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "gh_white_chunk_1",
+          "name": "White Titanite Chunk 1",
+          "flagId": 51320070,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "gh_red_chunk_2",
+          "name": "Red Titanite Chunk 2",
+          "flagId": 51320080,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "gh_blue_chunk_2",
+          "name": "Blue Titanite Chunk 2",
+          "flagId": 51320090,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "gh_white_chunk_2",
+          "name": "White Titanite Chunk 2",
+          "flagId": 51320100,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "gh_soul_2",
+          "name": "Large Soul - Great Hollow 2",
+          "flagId": 51320110,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "gh_titanite_chunk_2",
+          "name": "Titanite Chunk - Great Hollow 2",
+          "flagId": 51320120,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "gh_twin_humanities",
+          "name": "Twin Humanities - Great Hollow Entrance",
+          "flagId": 51320180,
+          "verified": true,
+          "notes": "Chest at the very start behind first illusory wall"
+        },
+        {
+          "id": "gh_red_chunk_1",
+          "name": "Red Titanite Chunk 1",
+          "flagId": 51320190,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_dragon_scale_start",
+          "name": "Dragon Scale - Ash Lake Start",
+          "flagId": 51320140,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_dragon_scale_log",
+          "name": "Dragon Scale - Ash Lake Log",
+          "flagId": 51320150,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_dragon_scale_water",
+          "name": "Dragon Scale - Ash Lake Water",
+          "flagId": 51320160,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_great_magic_barrier",
+          "name": "Miracle: Great Magic Barrier",
+          "flagId": 51320170,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "blighttown",
+      "name": "Blighttown",
+      "items": [
+        {
+          "id": "bt_soul_entrance",
+          "name": "Soul - Blighttown Entrance Dropoff",
+          "flagId": 51400020,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_shadow_set",
+          "name": "Shadow Set",
+          "flagId": 51400040,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_soul_upper_1",
+          "name": "Large Soul - Upper Blighttown",
+          "flagId": 51400050,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_humanity_bridge",
+          "name": "Humanity - Swaying Bridge",
+          "flagId": 51400060,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_blooming_moss",
+          "name": "Blooming Purple Moss Clump",
+          "flagId": 51400080,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_soul_upper_2",
+          "name": "Soul - Upper Blighttown 1",
+          "flagId": 51400090,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_soul_upper_3",
+          "name": "Soul - Upper Blighttown 2",
+          "flagId": 51400100,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_power_within",
+          "name": "Pyromancy: Power Within",
+          "flagId": 51400130,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_soul_wall_hugger",
+          "name": "Large Soul - Wall Hugger",
+          "flagId": 51400140,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_soul_upper_4",
+          "name": "Soul - Upper Blighttown 3",
+          "flagId": 51400150,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_eagle_shield",
+          "name": "Eagle Shield",
+          "flagId": 51400160,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_whip",
+          "name": "Whip",
+          "flagId": 51400180,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_crimson_set",
+          "name": "Mask of the Sealer \u002B Crimson Set",
+          "flagId": 51400190,
+          "verified": true,
+          "notes": "Chest in swamp near Quelaag"
+        },
+        {
+          "id": "bt_soul_fks",
+          "name": "Soul - Near Fire Keeper Soul",
+          "flagId": 51400210,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_titanite_shard",
+          "name": "Large Titanite Shard - Swamp 2",
+          "flagId": 51400230,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_great_club",
+          "name": "Great Club",
+          "flagId": 51400250,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_soul_quelana",
+          "name": "Large Soul - Quelana",
+          "flagId": 51400260,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_tattered_set",
+          "name": "Tattered Cloth Set \u002B Poison Mist",
+          "flagId": 51400270,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_soul_swamp_2",
+          "name": "Large Soul - Swamp 2",
+          "flagId": 51400280,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_green_titanite",
+          "name": "Green Titanite Shard",
+          "flagId": 51400290,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_titanite_swamp_1",
+          "name": "Large Titanite Shard - Swamp 1",
+          "flagId": 51400300,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_wanderer_set",
+          "name": "Wanderer Set \u002B Falchion",
+          "flagId": 51400310,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_soul_swamp_1",
+          "name": "Large Soul - Swamp 1",
+          "flagId": 51400320,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_iaito",
+          "name": "Iaito",
+          "flagId": 51400340,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_fire_keeper_soul",
+          "name": "Fire Keeper Soul - Blighttown",
+          "flagId": 51400350,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_server",
+          "name": "Server",
+          "flagId": 51400360,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_thorns_set",
+          "name": "Helm of Thorns \u002B Set",
+          "flagId": 51400370,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "bt_key_new_londo",
+          "name": "Key to New Londo Ruins (Chest)",
+          "flagId": 51400500,
+          "verified": true,
+          "notes": "Top of wooden structure at entrance to Valley of Drakes"
+        },
+        {
+          "id": "bt_dragon_scale",
+          "name": "Dragon Scale - Blighttown",
+          "flagId": 51400510,
+          "verified": true,
+          "notes": "Chest near swamp bonfire"
+        },
+        {
+          "id": "bt_remedy",
+          "name": "Sorcery: Remedy (Chest)",
+          "flagId": 51400520,
+          "verified": true,
+          "notes": "End of walkway past slippery branch near waterwheel"
+        }
+      ]
+    },
+    {
+      "id": "demon_ruins_lost_izalith",
+      "name": "Demon Ruins / Lost Izalith",
+      "items": [
+        {
+          "id": "dr_red_chunk_1",
+          "name": "Red Titanite Chunk #1",
+          "flagId": 51410000,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dr_red_chunk_cave",
+          "name": "Red Titanite Chunk - Chaos Eater Pit",
+          "flagId": 51410010,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dr_soul_chaos_eater",
+          "name": "Soul - Inside Chaos Eater Pit",
+          "flagId": 51410020,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dr_green_titanite",
+          "name": "Green Titanite Shard - Chaos Eater Pit",
+          "flagId": 51410030,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dr_soul_ceaseless",
+          "name": "Soul - Ceaseless Discharge area",
+          "flagId": 51410050,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dr_soul_lava_jump",
+          "name": "Large Soul - First Jump over Lava",
+          "flagId": 51410060,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dr_soul_bonfire",
+          "name": "Soul - Demon Ruins bonfire",
+          "flagId": 51410080,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dr_green_titanite_2",
+          "name": "Green Titanite Shard - Under Staircase",
+          "flagId": 51410090,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dr_large_flame_ember",
+          "name": "Large Flame Ember (Chest)",
+          "flagId": 51410100,
+          "verified": true,
+          "notes": "End of side area guarded by Burrowing Rockworms"
+        },
+        {
+          "id": "dr_soul_capra",
+          "name": "Soul - Outside Firesage (Capra)",
+          "flagId": 51410140,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dr_soul_covenant_door",
+          "name": "Soul - Chaos Covenant Door",
+          "flagId": 51410160,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dr_gold_hemmed_set",
+          "name": "Gold-Hemmed Black Set",
+          "flagId": 51410180,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dr_soul_elevator",
+          "name": "Soul - Ruins/Domain Elevator",
+          "flagId": 51410230,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dr_soul_brave",
+          "name": "Soul of a Brave Warrior",
+          "flagId": 51410250,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dr_green_titanite_3",
+          "name": "Green Titanite Shard - Centipede",
+          "flagId": 51410270,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "li_soul_lava_2",
+          "name": "Soul - Izalith Lava 2",
+          "flagId": 51410310,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "li_soul_lava_1",
+          "name": "Soul - Izalith Lava 1",
+          "flagId": 51410320,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "li_divine_blessing_1",
+          "name": "Divine Blessing - Izalith Lava 1",
+          "flagId": 51410330,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "li_divine_blessing_2",
+          "name": "Divine Blessing - Izalith Lava 2",
+          "flagId": 51410340,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "li_twin_humanities",
+          "name": "Twin Humanities - Lost Izalith",
+          "flagId": 51410360,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "li_rare_sacrifice_ring",
+          "name": "Rare Ring of Sacrifice - Izalith City",
+          "flagId": 51410380,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "li_soul_city_1",
+          "name": "Large Soul - Izalith City",
+          "flagId": 51410390,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "li_soul_city_hero",
+          "name": "Soul of a Hero - Izalith City",
+          "flagId": 51410400,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "li_red_slab",
+          "name": "Red Titanite Slab - Chaos Eater Pit",
+          "flagId": 51410410,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "li_soul_great_hero",
+          "name": "Soul of a Great Hero",
+          "flagId": 51410500,
+          "verified": true,
+          "notes": "Inside first square tower in the lava area"
+        },
+        {
+          "id": "li_soul_centipede",
+          "name": "Soul - Above Centipede Demon",
+          "flagId": 51410510,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "li_chaos_fire_whip",
+          "name": "Pyromancy: Chaos Fire Whip (Chest)",
+          "flagId": 51410520,
+          "verified": true,
+          "notes": "Chest around corner from Bed of Chaos entrance; guarded by Chaos Eater"
+        },
+        {
+          "id": "li_chaos_flame_ember",
+          "name": "Chaos Flame Ember (Chest)",
+          "flagId": 51410530,
+          "verified": true,
+          "notes": "Lava area where Ceaseless Discharge stood; guarded by Taurus Demons"
+        }
+      ]
+    },
+    {
+      "id": "sens_fortress",
+      "name": "Sen\u0027s Fortress",
+      "items": [
+        {
+          "id": "sf_ring_steel_prot",
+          "name": "Ring of Steel Protection (Chest)",
+          "flagId": 51500000,
+          "verified": true,
+          "notes": "End of large straight ball ramp"
+        },
+        {
+          "id": "sf_soul_entrance",
+          "name": "Soul - Sen\u0027s Entrance",
+          "flagId": 51500010,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_large_titanite_trap",
+          "name": "Large Titanite Shard (Trap Chest)",
+          "flagId": 51500020,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_divine_blessing",
+          "name": "Divine Blessing (Chest)",
+          "flagId": 51500040,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_black_sorcerer_set",
+          "name": "Black Sorcerer Set \u002B Hush",
+          "flagId": 51500060,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_covetous_gold",
+          "name": "Covetous Gold Serpent Ring",
+          "flagId": 51500070,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_titanite_1",
+          "name": "Large Titanite Shard #1",
+          "flagId": 51500080,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_flame_stoneplate",
+          "name": "Flame Stoneplate Ring (Chest)",
+          "flagId": 51500090,
+          "verified": true,
+          "notes": "Corner of the roof, guarded by Balder Knight"
+        },
+        {
+          "id": "sf_rare_sacrifice",
+          "name": "Rare Ring of Sacrifice (Chest)",
+          "flagId": 51500100,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_cage_key",
+          "name": "Cage Key",
+          "flagId": 51500150,
+          "verified": true,
+          "notes": "Bottom of Crestfallen Merchant\u0027s tower"
+        },
+        {
+          "id": "sf_shotel",
+          "name": "Shotel",
+          "flagId": 51500300,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_soul_ball_drop",
+          "name": "Large Soul - Ball Dropdown",
+          "flagId": 51500310,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_slumbering_ring",
+          "name": "Slumbering Dragoncrest Ring",
+          "flagId": 51500320,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_soul_illusory",
+          "name": "Large Soul - Illusory Wall",
+          "flagId": 51500330,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_soul_pit",
+          "name": "Soul - Sen\u0027s Pit",
+          "flagId": 51500350,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_scythe",
+          "name": "Scythe",
+          "flagId": 51500360,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_soul_bonfire",
+          "name": "Large Soul - Above Bonfire",
+          "flagId": 51500400,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_titanite_2",
+          "name": "Large Titanite Shard #2",
+          "flagId": 51500410,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_soul_cage",
+          "name": "Soul - Cage Area (Ricard\u0027s tower)",
+          "flagId": 51500420,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_sniper_crossbow",
+          "name": "Sniper Crossbow \u002B Sniper Bolt",
+          "flagId": 51500440,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "sf_lightning_spear",
+          "name": "Lightning Spear (Mimic)",
+          "flagId": 51500991,
+          "verified": true,
+          "notes": "Mimic in Sen\u0027s Fortress"
+        }
+      ]
+    },
+    {
+      "id": "anor_londo",
+      "name": "Anor Londo",
+      "items": [
+        {
+          "id": "al_sorcery_gmw",
+          "name": "Sorcery: Great Magic Weapon",
+          "flagId": 51510000,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_ring_suns_firstborn",
+          "name": "Ring of the Sun\u0027s Firstborn",
+          "flagId": 51510030,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_titanite_chunk",
+          "name": "Titanite Chunk - Near Giant Blacksmith",
+          "flagId": 51510040,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_soul_silver_archers",
+          "name": "Soul - Silver Archers",
+          "flagId": 51510050,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_dragonslayer_greatbow",
+          "name": "Dragonslayer Greatbow",
+          "flagId": 51510060,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_black_iron_set",
+          "name": "Black Iron Set (Greatsword\u002BGreatshield)",
+          "flagId": 51510070,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_favor_set",
+          "name": "Set of Favor",
+          "flagId": 51510080,
+          "verified": true,
+          "notes": "Lautrec\u0027s drop"
+        },
+        {
+          "id": "al_demon_titanite_elev",
+          "name": "Demon Titanite - Elevator Chest",
+          "flagId": 51510510,
+          "verified": true,
+          "notes": "Hidden behind bottom of screw elevator"
+        },
+        {
+          "id": "al_divine_blessing",
+          "name": "Divine Blessing - Rafters",
+          "flagId": 51510520,
+          "verified": true,
+          "notes": "Chest on a ledge in the painting room"
+        },
+        {
+          "id": "al_havel_set",
+          "name": "Havel\u0027s Set (Chest)",
+          "flagId": 51510530,
+          "verified": true,
+          "notes": "Hidden room behind illusory wall in fireplace"
+        },
+        {
+          "id": "al_havel_gauntlets",
+          "name": "Havel\u0027s Gauntlets \u002B Leggings (Chest)",
+          "flagId": 51510540,
+          "verified": true,
+          "notes": "Hidden room, fireplace"
+        },
+        {
+          "id": "al_havels_greatshield",
+          "name": "Havel\u0027s Greatshield (Chest)",
+          "flagId": 51510570,
+          "verified": true,
+          "notes": "Hidden room, fireplace (note: flagId stored differently in DSAP)"
+        },
+        {
+          "id": "al_dragon_tooth",
+          "name": "Dragon Tooth (Chest)",
+          "flagId": 51510560,
+          "verified": true,
+          "notes": "Same chest area"
+        },
+        {
+          "id": "al_silver_knight_helm",
+          "name": "Silver Knight Helm \u002B Armor (Chest)",
+          "flagId": 51510580,
+          "verified": true,
+          "notes": "Dragon trophy room"
+        },
+        {
+          "id": "al_silver_knight_gaunt",
+          "name": "Silver Knight Gauntlets \u002B Leggings",
+          "flagId": 51510590,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_demon_titanite_bed",
+          "name": "Demon Titanite - Bedroom Chest",
+          "flagId": 51510600,
+          "verified": true,
+          "notes": "Room with three Silver Knights (Seigmeyer)"
+        },
+        {
+          "id": "al_hawk_ring",
+          "name": "Hawk Ring (Behind Giant Blacksmith)",
+          "flagId": 51510610,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_sunlight_blade",
+          "name": "Miracle: Sunlight Blade (Gwyndolin area)",
+          "flagId": 51510620,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_brass_set",
+          "name": "Brass Set (Gwyndolin area)",
+          "flagId": 51510660,
+          "verified": true,
+          "notes": "Lautrec\u0027s armor set"
+        },
+        {
+          "id": "al_twinkling_titanite",
+          "name": "Twinkling Titanite - Anor Londo",
+          "flagId": 51510670,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_demon_titanite_giant",
+          "name": "Demon Titanite - Giants Room",
+          "flagId": 51510680,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_sunlight_medal",
+          "name": "Sunlight Medal",
+          "flagId": 51510690,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_soul_rooms",
+          "name": "Soul - Anor Londo Rooms",
+          "flagId": 51510700,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_occult_club",
+          "name": "Occult Club (Mimic)",
+          "flagId": 51510981,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "al_crystal_halberd",
+          "name": "Crystal Halberd (Mimic)",
+          "flagId": 51510971,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "new_londo_valley",
+      "name": "New Londo Ruins / Valley of Drakes",
+      "items": [
+        {
+          "id": "nl_soul_entrance",
+          "name": "Soul - New Londo Entrance",
+          "flagId": 51600000,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_estoc",
+          "name": "Estoc",
+          "flagId": 51600020,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_fks",
+          "name": "Fire Keeper Soul - New Londo",
+          "flagId": 51600030,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_transient_curse_1",
+          "name": "Transient Curse - Corpse in Pot",
+          "flagId": 51600040,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_parrying_dagger",
+          "name": "Parrying Dagger",
+          "flagId": 51600060,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_transient_curse_2",
+          "name": "Transient Curse - Banshee",
+          "flagId": 51600070,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_soul_1",
+          "name": "Large Soul - New Londo 1",
+          "flagId": 51600090,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_green_titanite",
+          "name": "Green Titanite Shard",
+          "flagId": 51600100,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_soul_corridor",
+          "name": "Soul - Back Corridor",
+          "flagId": 51600110,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_soul_2",
+          "name": "Large Soul - New Londo 2",
+          "flagId": 51600120,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_rare_sacrifice",
+          "name": "Rare Ring of Sacrifice - Roof",
+          "flagId": 51600130,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_cursebite_ring",
+          "name": "Cursebite Ring",
+          "flagId": 51600140,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_humanity",
+          "name": "Humanity - New Londo Ledge",
+          "flagId": 51600150,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_composite_bow",
+          "name": "Composite Bow \u002B Large Arrow",
+          "flagId": 51600160,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_post_seal_1",
+          "name": "Large Soul - Post-Seal 1",
+          "flagId": 51600250,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_post_seal_2",
+          "name": "Humanity - New Londo 2",
+          "flagId": 51600260,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_post_seal_3",
+          "name": "Soul - Stairs",
+          "flagId": 51600270,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_post_seal_4",
+          "name": "Large Soul - Post-Seal 2",
+          "flagId": 51600280,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_titanite_illusory",
+          "name": "Titanite Chunk - Illusory Wall",
+          "flagId": 51600290,
+          "verified": true,
+          "notes": "Small room behind illusory wall; thin walkway"
+        },
+        {
+          "id": "nl_cracked_red",
+          "name": "Cracked Red Eye Orb",
+          "flagId": 51600310,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_post_seal_5",
+          "name": "Large Soul - Post-Seal 3",
+          "flagId": 51600330,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_witch_set",
+          "name": "Witch Set \u002B Beatrice\u0027s Catalyst",
+          "flagId": 51600360,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_post_seal_6",
+          "name": "Large Soul - Post-Seal 4",
+          "flagId": 51600370,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "nl_very_large_ember",
+          "name": "Very Large Ember (Chest)",
+          "flagId": 51600500,
+          "verified": true,
+          "notes": "Third floor of main building; requires draining the water"
+        },
+        {
+          "id": "nl_titanite_chest",
+          "name": "Titanite Chunk - Ingward\u0027s Building",
+          "flagId": 51600510,
+          "verified": true,
+          "notes": "Corner of bottom floor, before Four Kings fog"
+        },
+        {
+          "id": "nl_transient_curse_3",
+          "name": "Transient Curse - Before Ghosts",
+          "flagId": 51600520,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "vod_soul_entrance",
+          "name": "VoD: Large Soul - Door",
+          "flagId": 51600170,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "vod_astoras_sword",
+          "name": "VoD: Astora\u0027s Straight Sword",
+          "flagId": 51600180,
+          "verified": true,
+          "notes": "Corpse guarded by stone giants near the cave"
+        },
+        {
+          "id": "vod_soul_dragon",
+          "name": "VoD: Soul - Undead Dragon",
+          "flagId": 51600190,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "vod_dragon_crest",
+          "name": "VoD: Dragon Crest Shield",
+          "flagId": 51600200,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "vod_humanity",
+          "name": "VoD: Humanity",
+          "flagId": 51600210,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "vod_brigand_set",
+          "name": "VoD: Brigand Set \u002B Spider Shield",
+          "flagId": 51600220,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "vod_red_tearstone",
+          "name": "VoD: Red Tearstone Ring",
+          "flagId": 51600380,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "dukes_archives_crystal_cave",
+      "name": "Duke\u0027s Archives / Crystal Cave",
+      "items": [
+        {
+          "id": "da_soul_stairs",
+          "name": "Soul - Archives Under Stairs",
+          "flagId": 51700000,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_twinkling_balcony",
+          "name": "Twinkling Titanite - Balcony",
+          "flagId": 51700010,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_avelyn",
+          "name": "Avelyn (Chest)",
+          "flagId": 51700020,
+          "verified": true,
+          "notes": "Top of bookshelf in first large area; drop from upper floor"
+        },
+        {
+          "id": "da_soul_great_hero",
+          "name": "Soul of a Great Hero - Seath Room",
+          "flagId": 51700040,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_prism_stone",
+          "name": "Prism Stone (Chest)",
+          "flagId": 51700050,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_soul_scafolding",
+          "name": "Soul - Cell Scaffolding",
+          "flagId": 51700060,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_maiden_set",
+          "name": "Maiden Set \u002B White Seance Ring",
+          "flagId": 51700070,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_soul_prison",
+          "name": "Large Soul - Prison Cell",
+          "flagId": 51700080,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_blue_chunk_courtyard",
+          "name": "Blue Titanite Chunk - Courtyard",
+          "flagId": 51700120,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_humanity_crystal",
+          "name": "Humanity - Crystal Caverns",
+          "flagId": 51700150,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_blue_slab",
+          "name": "Blue Titanite Slab - Crystal Caverns",
+          "flagId": 51700160,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_blue_chunk_crystal",
+          "name": "Blue Titanite Chunk - Crystal",
+          "flagId": 51700170,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_soul_hero_crystal",
+          "name": "Soul of a Hero - Crystal Caverns",
+          "flagId": 51700180,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_fks_giant_cell",
+          "name": "Fire Keeper Soul - Giant Cell",
+          "flagId": 51700200,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_archive_prison_key",
+          "name": "Archive Prison Extra Key",
+          "flagId": 51700210,
+          "verified": true,
+          "notes": "Side cell in Prison; needs Archive Tower Cell Key"
+        },
+        {
+          "id": "da_twinkling_chest_1",
+          "name": "Twinkling Titanite - Archives Chest 1",
+          "flagId": 51700510,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_twinkling_chest_2",
+          "name": "Twinkling Titanite - Archives Chest 2",
+          "flagId": 51700520,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_large_magic_ember",
+          "name": "Large Magic Ember (Chest)",
+          "flagId": 51700530,
+          "verified": true,
+          "notes": "Appears in the Seath room after defeating Seath in Crystal Cave"
+        },
+        {
+          "id": "da_strong_magic_shield",
+          "name": "Sorcery: Strong Magic Shield",
+          "flagId": 51700540,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_blue_chunk_chest",
+          "name": "Blue Titanite Chunk - Chest",
+          "flagId": 51700560,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_channeler_set",
+          "name": "Channeler Set",
+          "flagId": 51700580,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_giant_cell_key",
+          "name": "Archive Tower Giant Cell Key",
+          "flagId": 51700590,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_crystal_ember",
+          "name": "Crystal Ember (Chest)",
+          "flagId": 51700600,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_giant_door_key",
+          "name": "Archive Tower Giant Door Key",
+          "flagId": 51700630,
+          "verified": true,
+          "notes": "Prison balcony with noise mechanism"
+        },
+        {
+          "id": "da_logan_set",
+          "name": "Sage Robe \u002B Logan\u0027s Catalyst",
+          "flagId": 51700640,
+          "verified": true,
+          "notes": "Behind movable bookcase where Logan sits"
+        },
+        {
+          "id": "da_crystalline_set",
+          "name": "Crystalline Set",
+          "flagId": 51700650,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "da_enchanted_falchion",
+          "name": "Enchanted Falchion (Mimic)",
+          "flagId": 51700951,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "dukes_archives_crystal_cave_broken_pendant_crystal_golem_51700930",
+          "name": "Broken Pendant (Crystal Golem)",
+          "flagId": 51700930,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "kiln",
+      "name": "Kiln of the First Flame",
+      "items": [
+        {
+          "id": "kiln_black_knight_set",
+          "name": "Black Knight Set",
+          "flagId": 51800050,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "oolacile_dlc",
+      "name": "Oolacile / Artorias DLC",
+      "items": [
+        {
+          "id": "os_humanity",
+          "name": "OS: Humanity - Near Bonfire",
+          "flagId": 51210010,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_soul_tower",
+          "name": "RW: Soul - Behind Tower",
+          "flagId": 51210020,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_gold_coin",
+          "name": "RW: Gold Coin - Down the Slope",
+          "flagId": 51210030,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_guardian_leggings",
+          "name": "RW: Guardian Leggings",
+          "flagId": 51210040,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_guardian_armor",
+          "name": "RW: Guardian Armor",
+          "flagId": 51210050,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_elizabeths_mushroom",
+          "name": "RW: Elizabeth\u0027s Mushroom",
+          "flagId": 51210060,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_guardian_helm",
+          "name": "RW: Guardian Helm",
+          "flagId": 51210070,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_gough_arrow",
+          "name": "RW: Gough\u0027s Great Arrow",
+          "flagId": 51210080,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_soul_cliff",
+          "name": "RW: Large Soul - Edge of Cliff",
+          "flagId": 51210090,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ot_soul_rooftop",
+          "name": "OT: Large Soul - Early Rooftop",
+          "flagId": 51210110,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ot_soul_platform",
+          "name": "OT: Soul - Wooden Platform",
+          "flagId": 51210160,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ot_soul_stair_ledge",
+          "name": "OT: Soul of a Hero - Stair Ledge",
+          "flagId": 51210190,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ot_rubbish",
+          "name": "OT: Rubbish - Outside Door",
+          "flagId": 51210210,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_soul_kalameet_1",
+          "name": "RW: Soul - Kalameet Arena",
+          "flagId": 51210220,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_soul_kalameet_2",
+          "name": "RW: Soul - Kalameet Arena 2",
+          "flagId": 51210230,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_soul_kalameet_3",
+          "name": "RW: Soul - Kalameet Arena 3",
+          "flagId": 51210240,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_gough_arrow_kala",
+          "name": "RW: Gough\u0027s Arrow - Kalameet",
+          "flagId": 51210250,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ot_soul_sorceress",
+          "name": "OT: Soul - By First Sorceress",
+          "flagId": 51210260,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cota_dark_bead",
+          "name": "CotA: Sorcery: Dark Bead",
+          "flagId": 51210270,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cota_black_flame",
+          "name": "CotA: Pyromancy: Black Flame",
+          "flagId": 51210280,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cota_white_slab",
+          "name": "CotA: White Titanite Slab",
+          "flagId": 51210290,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cota_soul_ledge",
+          "name": "CotA: Soul - Left Ledge",
+          "flagId": 51210300,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cota_humanity",
+          "name": "CotA: Humanity - Prism Stone",
+          "flagId": 51210330,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cota_help_me_carving",
+          "name": "CotA: Help Me! Carving",
+          "flagId": 51210340,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_guardian_gauntlets",
+          "name": "RW: Guardian Gauntlets",
+          "flagId": 51210350,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_soul_elevator",
+          "name": "RW: Soul - Outside Elevator",
+          "flagId": 51210390,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_soul_slope",
+          "name": "RW: Soul - Up The Slope",
+          "flagId": 51210400,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ot_soul_statue_hallway",
+          "name": "OT: Soul - Statue Hallway Corner",
+          "flagId": 51210430,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cota_twin_humanities",
+          "name": "CotA: Twin Humanities - Under Pillar",
+          "flagId": 51210440,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ot_soul_2f_stairs",
+          "name": "OT: Soul - 2F Behind Stairs",
+          "flagId": 51210450,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ot_twin_humanities",
+          "name": "OT: Twin Humanities - Roof Drop",
+          "flagId": 51210460,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_soul_ravine",
+          "name": "RW: Large Soul - Back of Ravine",
+          "flagId": 51210470,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "rw_blue_titanite_slab",
+          "name": "RW: Blue Titanite Slab (Chest)",
+          "flagId": 51210500,
+          "verified": true,
+          "notes": "In pool of water just after Oolacile Sanctuary"
+        },
+        {
+          "id": "ot_red_chunk",
+          "name": "OT: Red Titanite Chunk (Chest)",
+          "flagId": 51210510,
+          "verified": true,
+          "notes": "Past ledge jump to second Mimic"
+        },
+        {
+          "id": "ot_silver_pendant",
+          "name": "OT: Silver Pendant (Chest)",
+          "flagId": 51210520,
+          "verified": true,
+          "notes": "Illusory wall after Township bonfire"
+        },
+        {
+          "id": "ot_dark_orb",
+          "name": "OT: Sorcery: Dark Orb (Chest)",
+          "flagId": 51210540,
+          "verified": true,
+          "notes": "Chest guarded by two Bloathead Sorcerers"
+        },
+        {
+          "id": "rw_titanite_slab_water",
+          "name": "RW: Titanite Slab (behind waterfall)",
+          "flagId": 51210550,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "cota_cleansing_shield",
+          "name": "CotA: Cleansing Greatshield",
+          "flagId": 51210910,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ot_very_good_carving",
+          "name": "OT: Very Good! Carving (Mimic)",
+          "flagId": 51210921,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ot_im_sorry_carving",
+          "name": "OT: I\u0027m Sorry Carving",
+          "flagId": 51210960,
+          "verified": true,
+          "notes": ""
+        },
+        {
+          "id": "ot_crest_key",
+          "name": "OT: Crest Key (2nd Mimic)",
+          "flagId": 51210981,
+          "verified": true,
+          "notes": "Drop does NOT despawn on death"
+        },
+        {
+          "id": "ot_dark_fog",
+          "name": "OT: Sorcery: Dark Fog",
+          "flagId": 51211000,
+          "verified": true,
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}

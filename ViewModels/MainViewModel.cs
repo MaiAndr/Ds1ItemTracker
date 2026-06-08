@@ -31,7 +31,11 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
     // The exe-side copy (bin/Release/…) is kept in sync as a secondary write.
     private static readonly string _itemsJsonProjectPath = FindProjectItemsJson();
     private static readonly string _itemsJsonExePath     = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "items.json");
-    private static readonly string _itemsJsonPath        = _itemsJsonProjectPath;
+    // ── items.json read path ──────────────────────────────────────────────────
+    // Always read from the exe-side copy — that's what the randomizer writes to.
+    // Fall back to the project path if the exe-side doesn't exist yet (first run).
+    private static string GetReadPath() =>
+        File.Exists(_itemsJsonExePath) ? _itemsJsonExePath : _itemsJsonProjectPath;
 
     private static string FindProjectItemsJson()
     {
@@ -159,6 +163,18 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
         // Restore persisted opacity
         _overlayBgOpacity = Settings.Current.OverlayOpacity;
 
+        // Auto-detect game folder if not yet saved
+        if (string.IsNullOrEmpty(Settings.Current.GameFolder))
+        {
+            string? detected = SettingsService.TryDetectGameFolder();
+            if (detected != null)
+            {
+                Settings.Current.GameFolder = detected;
+                Settings.Save();
+            }
+        }
+        RefreshLatestParam();
+
         LoadItemDatabase();
 
         _pollTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
@@ -169,15 +185,15 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
     // ── Item database ─────────────────────────────────────────────────────────
     private void LoadItemDatabase()
     {
-        if (!File.Exists(_itemsJsonPath))
+        if (!File.Exists(GetReadPath()))
         {
-            StatusText = $"items.json not found at: {_itemsJsonPath}";
+            StatusText = $"items.json not found at: {GetReadPath()}";
             return;
         }
 
         try
         {
-            string json = File.ReadAllText(_itemsJsonPath);
+            string json = File.ReadAllText(GetReadPath());
             var db = JsonSerializer.Deserialize<ItemDatabase>(json,
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
@@ -320,6 +336,14 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
         // or Take Snapshot again when ready for the next item.
     }
 
+    public void Reconnect()
+    {
+        _memory.Disconnect();
+        _flags.Reset();
+        IsConnected = false;
+        StatusText  = "Reconnecting…";
+    }
+
     public void ShowDiagnostics()
     {
         _flags.Reset(); // force a fresh resolution attempt
@@ -432,6 +456,166 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
         => System.Text.RegularExpressions.Regex
                .Replace(text.ToLowerInvariant().Trim(), @"[^a-z0-9]+", "_")
                .Trim('_');
+
+    // ── Item Randomizer support ───────────────────────────────────────────────
+
+    private static readonly string _itemsDefaultPath =
+        _itemsJsonExePath.Replace("items.json", "items.default.json");
+    private static readonly string _itemsDefaultExePath =
+        _itemsJsonExePath.Replace("items.json", "items.default.json");
+
+    private bool _randomizerActive;
+    public bool RandomizerActive
+    {
+        get => _randomizerActive;
+        private set { _randomizerActive = value; OnPropertyChanged(); OnPropertyChanged(nameof(RandomizerStatusText)); }
+    }
+
+    public string RandomizerStatusText => RandomizerActive ? "Randomizer Active" : "Default";
+
+    private string _latestParamFile = string.Empty;
+    public string LatestParamFile
+    {
+        get => _latestParamFile;
+        private set { _latestParamFile = value; OnPropertyChanged(); OnPropertyChanged(nameof(ParamFileLabel)); OnPropertyChanged(nameof(CanApplyRandomizer)); }
+    }
+
+    public string ParamFileLabel => string.IsNullOrEmpty(_latestParamFile)
+        ? "No seed found"
+        : System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(_latestParamFile)!) + "\\ItemLotParam.param";
+
+    public bool CanApplyRandomizer => !string.IsNullOrEmpty(_latestParamFile);
+
+    public string GameFolder
+    {
+        get => Settings.Current.GameFolder;
+        set
+        {
+            Settings.Current.GameFolder = value;
+            Settings.Save();
+            OnPropertyChanged();
+            RefreshLatestParam();
+        }
+    }
+
+    public void RefreshLatestParam()
+    {
+        string? found = SettingsService.FindLatestParamFile(Settings.Current.GameFolder);
+        LatestParamFile = found ?? string.Empty;
+    }
+
+    /// <summary>
+    /// Apply the latest detected randomizer param file.
+    /// </summary>
+    public void ApplyRandomizer(Window owner)
+    {
+        if (string.IsNullOrEmpty(_latestParamFile))
+        {
+            MessageBox.Show("No ItemLotParam.param found. Make sure the game folder is correct and a randomizer seed folder exists.",
+                "No Param File", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
+        }
+        ApplyRandomizerFromPath(_latestParamFile, owner);
+    }
+
+    private void ApplyRandomizerFromPath(string paramPath, Window owner)
+    {
+        var result = ItemLotParamService.Parse(paramPath);
+        if (!result.Success)
+        {
+            MessageBox.Show($"Failed to parse param file:\n{result.Error}\n\nDiagnostics:\n{result.Diagnostics}",
+                "Randomizer Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            return;
+        }
+
+        if (result.Mapping.Count == 0)
+        {
+            MessageBox.Show("No flag mappings found in param file.\n\nDiagnostics:\n" + result.Diagnostics,
+                "Randomizer Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
+        }
+
+        // First application: save the unmodified items.json as the default backup
+        EnsureDefaultBackup();
+
+        // Reload from the default backup so we always start from a clean slate
+        // (handles re-applying after a different seed)
+        string jsonToMap = File.Exists(_itemsDefaultPath)
+            ? File.ReadAllText(_itemsDefaultPath)
+            : File.ReadAllText(GetReadPath());
+
+        var db = JsonSerializer.Deserialize<ItemDatabase>(jsonToMap,
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+        if (db == null)
+        {
+            MessageBox.Show("Could not read items.json.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            return;
+        }
+
+        int updated = 0;
+        foreach (var area in db.Areas)
+        foreach (var item in area.Items)
+        {
+            // Only remap world-pickup and boss-drop flags (50_000_000+)
+            if (item.FlagId >= 50_000_000 && result.Mapping.TryGetValue(item.FlagId, out long newFlag))
+            {
+                if (newFlag != item.FlagId)
+                {
+                    item.FlagId = newFlag;
+                    updated++;
+                }
+            }
+        }
+
+        // Save the remapped database — write to exe folder only
+        // (the project source items.json should stay as the clean default)
+        string newJson = JsonSerializer.Serialize(db, new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        });
+        File.WriteAllText(_itemsJsonExePath, newJson);
+
+        // Reload
+        LoadItemDatabase();
+        RandomizerActive = true;
+
+        MessageBox.Show(
+            $"Randomizer applied.\n\n" +
+            $"• {updated} item location flags updated\n" +
+            $"• {result.Mapping.Count} total rows read from param\n\n" +
+            $"The original items.json is backed up as items.default.json.\n" +
+            $"Use \"Revert to Default\" to restore it.\n\n" +
+            $"--- Parse Diagnostics ---\n{result.Diagnostics}",
+            "Randomizer Applied", MessageBoxButton.OK, MessageBoxImage.Information);
+    }
+
+    public void RevertToDefault()
+    {
+        if (!File.Exists(_itemsDefaultPath))
+        {
+            MessageBox.Show("No backup found (items.default.json). Already using default.",
+                "Revert", MessageBoxButton.OK, MessageBoxImage.Information);
+            return;
+        }
+
+        string json = File.ReadAllText(_itemsDefaultPath);
+        // Restore to exe folder only
+        File.WriteAllText(_itemsJsonExePath, json);
+
+        LoadItemDatabase();
+        RandomizerActive = false;
+    }
+
+    private void EnsureDefaultBackup()
+    {
+        if (File.Exists(_itemsDefaultPath)) return;
+        // Back up the current exe-side items.json
+        string source = File.Exists(_itemsJsonExePath) ? _itemsJsonExePath : _itemsJsonProjectPath;
+        if (!File.Exists(source)) return;
+        File.WriteAllText(_itemsDefaultPath, File.ReadAllText(source));
+    }
 
     // ── Overlay state push ───────────────────────────────────────────────────
     private void PushOverlayState()
