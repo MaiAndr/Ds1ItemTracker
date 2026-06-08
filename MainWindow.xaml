@@ -65,6 +65,8 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Grid.Column="0" Text="⬡ Overlay  Opacity:"
@@ -88,6 +90,36 @@
                                FontSize="10" VerticalAlignment="Center" Cursor="Hand"
                                ToolTip="Click to open overlay in browser. Use as OBS Browser Source."
                                MouseLeftButtonDown="OverlayUrl_Click"/>
+
+                    <!-- Randomizer controls -->
+                    <Border Grid.Column="5" Width="1" Height="14" Background="#FF3A3A3A" Margin="8,0"/>
+                    <StackPanel Grid.Column="6" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,6,0">
+                        <TextBlock Text="🎲" FontSize="11" VerticalAlignment="Center" Margin="0,0,4,0"
+                                   ToolTip="Item Randomizer"/>
+                        <TextBlock Text="{Binding RandomizerStatusText}"
+                                   Foreground="{StaticResource TextSecondaryBrush}"
+                                   FontSize="10" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <TextBox Text="{Binding GameFolder, UpdateSourceTrigger=LostFocus}"
+                                 Width="180" FontSize="10" VerticalContentAlignment="Center"
+                                 ToolTip="DS1R game folder — seed subfolders are detected automatically"
+                                 Padding="4,1" Margin="0,0,3,0"/>
+                        <TextBlock Text="{Binding ParamFileLabel}"
+                                   Foreground="{StaticResource AccentBrush}"
+                                   FontSize="10" VerticalAlignment="Center" Margin="0,0,4,0"
+                                   MaxWidth="180" TextTrimming="CharacterEllipsis"
+                                   ToolTip="{Binding LatestParamFile}"/>
+                        <Button Content="⟳" Padding="6,2" Margin="0,0,4,0"
+                                ToolTip="Refresh: scan for a newer randomizer seed folder"
+                                Click="RefreshParam_Click"/>
+                        <Button Content="Apply" Padding="8,2" Margin="0,0,4,0"
+                                IsEnabled="{Binding CanApplyRandomizer}"
+                                ToolTip="Remap item flag IDs using the detected randomizer seed"
+                                Click="ApplyRandomizer_Click"/>
+                        <Button Content="Revert" Padding="8,2"
+                                IsEnabled="{Binding RandomizerActive}"
+                                ToolTip="Restore the original items.json"
+                                Click="RevertRandomizer_Click"/>
+                    </StackPanel>
                 </Grid>
             </StackPanel>
         </Border>

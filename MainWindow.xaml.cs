@@ -92,4 +92,19 @@ public partial class MainWindow : Window
             _floatingOverlay.Show();
         }
     }
+
+    private void ApplyRandomizer_Click(object sender, RoutedEventArgs e)
+        => _vm.ApplyRandomizer(this);
+
+    private void RefreshParam_Click(object sender, RoutedEventArgs e)
+        => _vm.RefreshLatestParam();
+
+    private void RevertRandomizer_Click(object sender, RoutedEventArgs e)
+    {
+        var r = MessageBox.Show(
+            "Revert to default items.json?\nThis will remove the randomizer flag remapping.",
+            "Revert to Default", MessageBoxButton.YesNo, MessageBoxImage.Question);
+        if (r == MessageBoxResult.Yes)
+            _vm.RevertToDefault();
+    }
 }

@@ -11,6 +11,7 @@ A real-time item pickup tracker for **Dark Souls Remastered** that reads the gam
 - **Live memory reading** — attaches to the running `DarkSoulsRemastered.exe` process and polls every second; no game files are modified
 - **~350 verified item locations** — boss kills, boss drops, and world pickups across all areas including the Artorias of the Abyss DLC
 - **Auto-switches area** — when you pick up an item, the tracker automatically scrolls to that area
+- **Item Randomizer support** — parses the randomizer's `ItemLotParam.param` seed file and remaps all flag IDs so the tracker correctly marks locations you have visited, not the vanilla items
 - **Stream overlay (OBS)** — built-in HTTP server serves a lightweight HTML overlay at `http://localhost:7373/`; use it as an OBS Browser Source with transparent background
 - **Floating on-screen overlay** — always-on-top borderless window you can drag anywhere; supports click-through mode so you can interact with the game beneath it
 - **Flag Scanner** *(debug build only)* — snapshot the flag array, pick up an item, detect which flag changed, and add it directly to `items.json`
@@ -32,6 +33,20 @@ A real-time item pickup tracker for **Dark Souls Remastered** that reads the gam
 2. **Run `Ds1ItemTracker.exe`** — the status bar shows `● Connected` once the game is detected
 3. Browse areas on the left; items you have already picked up are shown with a ✓ and strikethrough
 4. Items marked ⚠ are unverified — their flag IDs are placeholders and are not tracked
+
+> **Using [Matt's DS1 Enemy Randomizer](https://www.nexusmods.com/darksoulsremastered/mods/922)?**
+> Start the game first and let the enemy randomizer fully load, then launch the tracker. The enemy randomizer injects into the process on startup and can interfere with the AoB scan if the tracker connects too early.
+
+### Item Randomizer (HotPocketRemix)
+
+When using [DarkSoulsItemRandomizer](https://github.com/HotPocketRemix/DarkSoulsItemRandomizer), item locations are shuffled but the tracker still needs to match the right flag to each physical location. Use the built-in remapping feature:
+
+1. Generate your randomizer seed as normal — a `random-seed-...` folder will appear in the DS1R game directory
+2. In the tracker header, confirm the **game folder** path is correct (auto-detected from Steam by default)
+3. The detected seed folder and param file are shown next to the path — click **⟳** to refresh if you generated a new seed
+4. Click **Apply** — the tracker reads `ItemLotParam.param` from the seed folder, remaps every location's flag ID, and saves `items.default.json` as a backup
+5. The status shows **Randomizer Active** when remapping is in effect
+6. Click **Revert** to restore vanilla tracking (e.g. for a new non-randomized run)
 
 ### Stream Overlay (OBS)
 
