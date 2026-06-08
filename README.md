@@ -133,3 +133,4 @@ Pre-built releases are available on the [Releases page](https://github.com/MaiAn
 ## Disclaimer
 
 This tool reads game memory (read-only). It does not modify the game, inject code, or communicate with online services. Use at your own risk in accordance with From Software's terms of service.
+
