@@ -31,7 +31,11 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
     // The exe-side copy (bin/Release/…) is kept in sync as a secondary write.
     private static readonly string _itemsJsonProjectPath = FindProjectItemsJson();
     private static readonly string _itemsJsonExePath     = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "items.json");
-    private static readonly string _itemsJsonPath        = _itemsJsonProjectPath;
+    // ── items.json read path ──────────────────────────────────────────────────
+    // Always read from the exe-side copy — that's what the randomizer writes to.
+    // Fall back to the project path if the exe-side doesn't exist yet (first run).
+    private static string GetReadPath() =>
+        File.Exists(_itemsJsonExePath) ? _itemsJsonExePath : _itemsJsonProjectPath;
 
     private static string FindProjectItemsJson()
     {
@@ -181,15 +185,15 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
     // ── Item database ─────────────────────────────────────────────────────────
     private void LoadItemDatabase()
     {
-        if (!File.Exists(_itemsJsonPath))
+        if (!File.Exists(GetReadPath()))
         {
-            StatusText = $"items.json not found at: {_itemsJsonPath}";
+            StatusText = $"items.json not found at: {GetReadPath()}";
             return;
         }
 
         try
         {
-            string json = File.ReadAllText(_itemsJsonPath);
+            string json = File.ReadAllText(GetReadPath());
             var db = JsonSerializer.Deserialize<ItemDatabase>(json,
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
@@ -538,7 +542,7 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
         // (handles re-applying after a different seed)
         string jsonToMap = File.Exists(_itemsDefaultPath)
             ? File.ReadAllText(_itemsDefaultPath)
-            : File.ReadAllText(_itemsJsonPath);
+            : File.ReadAllText(GetReadPath());
 
         var db = JsonSerializer.Deserialize<ItemDatabase>(jsonToMap,
             new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
@@ -608,7 +612,7 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
     {
         if (File.Exists(_itemsDefaultPath)) return;
         // Back up the current exe-side items.json
-        string source = File.Exists(_itemsJsonExePath) ? _itemsJsonExePath : _itemsJsonPath;
+        string source = File.Exists(_itemsJsonExePath) ? _itemsJsonExePath : _itemsJsonProjectPath;
         if (!File.Exists(source)) return;
         File.WriteAllText(_itemsDefaultPath, File.ReadAllText(source));
     }
