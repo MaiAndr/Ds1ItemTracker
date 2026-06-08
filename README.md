@@ -1,5 +1,7 @@
 # DS1 Remastered — Item Pickup Tracker
 
+> **[⬇ Download the latest release](https://github.com/MaiAndr/Ds1ItemTracker/releases/latest)**
+
 A real-time item pickup tracker for **Dark Souls Remastered** that reads the game's event flags directly from memory. Automatically detects which items you have picked up and highlights them in a clean dark-themed UI.
 
 ---
@@ -106,16 +108,18 @@ All item locations are defined in `items.json` next to the executable. The struc
 ## Building from Source
 
 ```bash
-git clone https://github.com/your-username/Ds1ItemTracker
+git clone https://github.com/MaiAndr/Ds1ItemTracker
 cd Ds1ItemTracker
 dotnet build -c Release
 # Output: bin/Release/net8.0-windows/Ds1ItemTracker.exe
 ```
 
-Run in **Debug** mode to access the Flag Scanner:
+Or publish a distributable single-file exe:
 ```bash
-dotnet run -c Debug
+dotnet publish -c Release -r win-x64 --no-self-contained -o publish/
 ```
+
+Pre-built releases are available on the [Releases page](https://github.com/MaiAndr/Ds1ItemTracker/releases).
 
 ---
 
