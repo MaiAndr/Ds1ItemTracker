@@ -4,8 +4,8 @@
         xmlns:conv="clr-namespace:Ds1ItemTracker.Converters"
         Title="DS1 Remastered — Item Pickup Tracker"
         Icon="app.ico"
-        Width="900" Height="640"
-        MinWidth="700" MinHeight="480"
+        Width="1000" Height="640"
+        MinWidth="1000" MinHeight="480"
         Background="{StaticResource BgDarkBrush}"
         FontFamily="Segoe UI" FontSize="13"
         Foreground="{StaticResource TextPrimaryBrush}">
@@ -339,11 +339,15 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="{Binding StatusText}"
                            Foreground="{StaticResource TextSecondaryBrush}" FontSize="11"
                            VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="1" FontSize="11" VerticalAlignment="Center"
+                <Button Grid.Column="1" Content="⟳ Reconnect" Padding="10,2" Margin="8,0"
+                        ToolTip="Force-disconnect and reconnect to DarkSoulsRemastered.exe"
+                        Click="Reconnect_Click"/>
+                <TextBlock Grid.Column="2" FontSize="11" VerticalAlignment="Center"
                            Foreground="{StaticResource TextSecondaryBrush}">
                     <Run Text="Last updated: "/>
                     <Run Text="{Binding LastUpdate, Mode=OneWay}" Foreground="{StaticResource TextPrimaryBrush}"/>

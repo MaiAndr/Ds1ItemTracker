@@ -332,6 +332,14 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
         // or Take Snapshot again when ready for the next item.
     }
 
+    public void Reconnect()
+    {
+        _memory.Disconnect();
+        _flags.Reset();
+        IsConnected = false;
+        StatusText  = "Reconnecting…";
+    }
+
     public void ShowDiagnostics()
     {
         _flags.Reset(); // force a fresh resolution attempt
@@ -448,7 +456,7 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
     // ── Item Randomizer support ───────────────────────────────────────────────
 
     private static readonly string _itemsDefaultPath =
-        _itemsJsonProjectPath.Replace("items.json", "items.default.json");
+        _itemsJsonExePath.Replace("items.json", "items.default.json");
     private static readonly string _itemsDefaultExePath =
         _itemsJsonExePath.Replace("items.json", "items.default.json");
 
@@ -556,15 +564,14 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
             }
         }
 
-        // Save the remapped database
+        // Save the remapped database — write to exe folder only
+        // (the project source items.json should stay as the clean default)
         string newJson = JsonSerializer.Serialize(db, new JsonSerializerOptions
         {
             WriteIndented = true,
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         });
-        File.WriteAllText(_itemsJsonProjectPath, newJson);
-        if (!string.Equals(_itemsJsonProjectPath, _itemsJsonExePath, StringComparison.OrdinalIgnoreCase))
-            File.WriteAllText(_itemsJsonExePath, newJson);
+        File.WriteAllText(_itemsJsonExePath, newJson);
 
         // Reload
         LoadItemDatabase();
@@ -590,9 +597,8 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
         }
 
         string json = File.ReadAllText(_itemsDefaultPath);
-        File.WriteAllText(_itemsJsonProjectPath, json);
-        if (!string.Equals(_itemsJsonProjectPath, _itemsJsonExePath, StringComparison.OrdinalIgnoreCase))
-            File.WriteAllText(_itemsJsonExePath, json);
+        // Restore to exe folder only
+        File.WriteAllText(_itemsJsonExePath, json);
 
         LoadItemDatabase();
         RandomizerActive = false;
@@ -601,11 +607,10 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
     private void EnsureDefaultBackup()
     {
         if (File.Exists(_itemsDefaultPath)) return;
-        if (!File.Exists(_itemsJsonPath)) return;
-        string json = File.ReadAllText(_itemsJsonPath);
-        File.WriteAllText(_itemsDefaultPath, json);
-        if (!string.Equals(_itemsDefaultPath, _itemsDefaultExePath, StringComparison.OrdinalIgnoreCase))
-            File.WriteAllText(_itemsDefaultExePath, json);
+        // Back up the current exe-side items.json
+        string source = File.Exists(_itemsJsonExePath) ? _itemsJsonExePath : _itemsJsonPath;
+        if (!File.Exists(source)) return;
+        File.WriteAllText(_itemsDefaultPath, File.ReadAllText(source));
     }
 
     // ── Overlay state push ───────────────────────────────────────────────────

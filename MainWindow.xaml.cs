@@ -47,6 +47,9 @@ public partial class MainWindow : Window
     private void Diagnostics_Click(object sender, RoutedEventArgs e)
         => _vm.ShowDiagnostics();
 
+    private void Reconnect_Click(object sender, RoutedEventArgs e)
+        => _vm.Reconnect();
+
     private void RemoveItem_Click(object sender, RoutedEventArgs e)
     {
         if (sender is System.Windows.Controls.MenuItem mi &&
