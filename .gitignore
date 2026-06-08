@@ -1,0 +1,29 @@
+# Build output
+bin/
+obj/
+publish/
+
+# Visual Studio / VS Code
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Rider
+.idea/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# Test results
+TestResults/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# App runtime output (don't track auto-generated copies)
+# items.json is intentionally tracked in source control — do NOT ignore it
+settings.json
