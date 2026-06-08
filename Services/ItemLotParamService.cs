@@ -88,7 +88,15 @@ public sealed class ItemLotParamService
 
             int getItemLotFlag = BitConverter.ToInt32(file, flagAbsOff);
 
-            long vanillaFlag = 50_000_000L + lotId;
+            // Compute the vanilla flag key matching items.json's flagId convention:
+            //   World pickup lots (lotId >= 100_000): vanillaFlag = 50_000_000 + lotId
+            //     e.g. lot 1000240 → 51000240  (Sewer Chamber Key)
+            //   Boss drop lots (lotId 1_000–9_999): vanillaFlag = 50_000_000 + (lotId - 1_000)
+            //     e.g. lot 2670 → 50001670  (Orange Charred Ring / Ceaseless Discharge)
+            //   This matches the Flag field in DSAP's ItemLots.json exactly.
+            long vanillaFlag = (lotId >= 1_000 && lotId <= 9_999)
+                ? 50_000_000L + (lotId - 1_000)
+                : 50_000_000L + lotId;
             long actualFlag  = (long)(uint)getItemLotFlag; // treat as unsigned
 
             if (actualFlag == 0) { skipped++; continue; }
