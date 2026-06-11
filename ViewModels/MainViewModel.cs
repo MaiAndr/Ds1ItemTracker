@@ -23,7 +23,7 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
     private readonly MemoryService   _memory  = new();
     private readonly GameFlagService _flags;
     private readonly DispatcherTimer _pollTimer;
-    private readonly OverlayServer   _overlay;
+    private          OverlayServer   _overlay;
     public  readonly SettingsService Settings;
 
     // ── items.json paths ──────────────────────────────────────────────────────
@@ -86,6 +86,15 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
     }
 
     public string OverlayUrl => _overlay.Url;
+
+    /// <summary>Restart the overlay HTTP server on a new port (called after settings change).</summary>
+    public void RestartOverlay(int port)
+    {
+        _overlay.Dispose();
+        _overlay = new OverlayServer(port);
+        _overlay.Start();
+        OnPropertyChanged(nameof(OverlayUrl));
+    }
 
 #if DEBUG
     public bool IsDebugBuild => true;
@@ -157,7 +166,7 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
                        .Replace("items.json", string.Empty).TrimEnd('\\', '/'));
 
         _flags   = new GameFlagService(_memory);
-        _overlay = new OverlayServer();
+        _overlay = new OverlayServer(Settings.Current.OverlayPort);
         _overlay.Start();
 
         // Restore persisted opacity
@@ -334,6 +343,20 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
         // Do NOT auto-advance _flagSnapshot here.
         // The user can click Detect again to re-check against the same baseline,
         // or Take Snapshot again when ready for the next item.
+    }
+
+    public void NextArea()
+    {
+        if (Areas.Count == 0) return;
+        int idx = _selectedArea == null ? -1 : Areas.IndexOf(_selectedArea);
+        SelectedArea = Areas[(idx + 1) % Areas.Count];
+    }
+
+    public void PrevArea()
+    {
+        if (Areas.Count == 0) return;
+        int idx = _selectedArea == null ? 0 : Areas.IndexOf(_selectedArea);
+        SelectedArea = Areas[(idx - 1 + Areas.Count) % Areas.Count];
     }
 
     public void Reconnect()

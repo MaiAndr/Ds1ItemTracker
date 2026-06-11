@@ -17,6 +17,15 @@ public sealed class AppSettings
 
     [JsonPropertyName("gameFolder")]
     public string GameFolder { get; set; } = string.Empty;
+
+    [JsonPropertyName("hotkeyNextArea")]
+    public string HotkeyNextArea { get; set; } = "Ctrl+Right";
+
+    [JsonPropertyName("hotkeyPrevArea")]
+    public string HotkeyPrevArea { get; set; } = "Ctrl+Left";
+
+    [JsonPropertyName("overlayPort")]
+    public int OverlayPort { get; set; } = 7373;
 }
 
 public sealed class SettingsService

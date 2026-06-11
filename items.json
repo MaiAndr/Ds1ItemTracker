@@ -1234,13 +1234,6 @@
           "flagId": 51100500,
           "verified": true,
           "notes": "Basement of second large building"
-        },
-        {
-          "id": "pw_fire_surge",
-          "name": "Pyromancy: Fire Surge",
-          "flagId": 51100980,
-          "verified": true,
-          "notes": ""
         }
       ]
     },
@@ -2201,13 +2194,6 @@
           "flagId": 51500440,
           "verified": true,
           "notes": ""
-        },
-        {
-          "id": "sf_lightning_spear",
-          "name": "Lightning Spear (Mimic)",
-          "flagId": 51500991,
-          "verified": true,
-          "notes": "Mimic in Sen\u0027s Fortress"
         }
       ]
     },
@@ -2373,20 +2359,6 @@
           "id": "al_soul_rooms",
           "name": "Soul - Anor Londo Rooms",
           "flagId": 51510700,
-          "verified": true,
-          "notes": ""
-        },
-        {
-          "id": "al_occult_club",
-          "name": "Occult Club (Mimic)",
-          "flagId": 51510981,
-          "verified": true,
-          "notes": ""
-        },
-        {
-          "id": "al_crystal_halberd",
-          "name": "Crystal Halberd (Mimic)",
-          "flagId": 51510971,
           "verified": true,
           "notes": ""
         }
@@ -2816,13 +2788,6 @@
           "notes": ""
         },
         {
-          "id": "da_enchanted_falchion",
-          "name": "Enchanted Falchion (Mimic)",
-          "flagId": 51700951,
-          "verified": true,
-          "notes": ""
-        },
-        {
           "id": "dukes_archives_crystal_cave_broken_pendant_crystal_golem_51700930",
           "name": "Broken Pendant (Crystal Golem)",
           "flagId": 51700930,
@@ -3106,34 +3071,6 @@
           "flagId": 51210550,
           "verified": true,
           "notes": ""
-        },
-        {
-          "id": "cota_cleansing_shield",
-          "name": "CotA: Cleansing Greatshield",
-          "flagId": 51210910,
-          "verified": true,
-          "notes": ""
-        },
-        {
-          "id": "ot_very_good_carving",
-          "name": "OT: Very Good! Carving (Mimic)",
-          "flagId": 51210921,
-          "verified": true,
-          "notes": ""
-        },
-        {
-          "id": "ot_im_sorry_carving",
-          "name": "OT: I\u0027m Sorry Carving",
-          "flagId": 51210960,
-          "verified": true,
-          "notes": ""
-        },
-        {
-          "id": "ot_crest_key",
-          "name": "OT: Crest Key (2nd Mimic)",
-          "flagId": 51210981,
-          "verified": true,
-          "notes": "Drop does NOT despawn on death"
         },
         {
           "id": "ot_dark_fog",
