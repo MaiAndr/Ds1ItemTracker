@@ -3073,20 +3073,6 @@
           "notes": ""
         },
         {
-          "id": "cota_cleansing_shield",
-          "name": "CotA: Cleansing Greatshield",
-          "flagId": 51210910,
-          "verified": true,
-          "notes": ""
-        },
-        {
-          "id": "ot_im_sorry_carving",
-          "name": "OT: I\u0027m Sorry Carving",
-          "flagId": 51210960,
-          "verified": true,
-          "notes": ""
-        },
-        {
           "id": "ot_dark_fog",
           "name": "OT: Sorcery: Dark Fog",
           "flagId": 51211000,
