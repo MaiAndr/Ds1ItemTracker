@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 using Ds1ItemTracker.Helpers;
+using Ds1ItemTracker.Services;
 using Ds1ItemTracker.ViewModels;
 using Ds1ItemTracker.Views;
 
@@ -12,6 +13,7 @@ public partial class MainWindow : Window
 {
     private readonly MainViewModel _vm;
     private FloatingOverlay? _floatingOverlay;
+    private readonly UpdateChecker _updateChecker = new();
 
     // ── Win32 global hotkeys ──────────────────────────────────────────────────
     [DllImport("user32.dll")] private static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint vk);
@@ -35,6 +37,7 @@ public partial class MainWindow : Window
         InitializeComponent();
         _vm = new MainViewModel();
         DataContext = _vm;
+        TxtVersion.Text = $"v{UpdateChecker.CurrentVersion.ToString(3)}";
     }
 
     protected override void OnSourceInitialized(EventArgs e)
@@ -43,7 +46,25 @@ public partial class MainWindow : Window
         _hwndSource = PresentationSource.FromVisual(this) as HwndSource;
         _hwndSource?.AddHook(WndProc);
         RegisterGlobalHotkeys();
+        _ = CheckForUpdateAsync();
     }
+
+    private async Task CheckForUpdateAsync()
+    {
+        if (!await _updateChecker.CheckAsync()) return;
+        UpdateBannerText.Text =
+            $"\u2605  A new version is available: {_updateChecker.LatestTag}  (current: v{UpdateChecker.CurrentVersion})";
+        UpdateBanner.Visibility = Visibility.Visible;
+    }
+
+    private void UpdateBannerOpen_Click(object sender, RoutedEventArgs e)
+    {
+        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(
+            _updateChecker.ReleasePage) { UseShellExecute = true });
+    }
+
+    private void UpdateBannerDismiss_Click(object sender, RoutedEventArgs e)
+        => UpdateBanner.Visibility = Visibility.Collapsed;
 
     // ── Global hotkey registration ────────────────────────────────────────────
 
@@ -84,17 +105,31 @@ public partial class MainWindow : Window
         return IntPtr.Zero;
     }
 
+    private SettingsWindow? _settingsWindow;
+
     private void Settings_Click(object sender, RoutedEventArgs e)
     {
+        // Bring existing instance to front instead of opening a second one
+        if (_settingsWindow != null)
+        {
+            _settingsWindow.Activate();
+            return;
+        }
+
         int oldPort = _vm.Settings.Current.OverlayPort;
-        var dlg = new SettingsWindow(_vm.Settings.Current) { Owner = this };
-        if (dlg.ShowDialog() == true)
+        _settingsWindow = new SettingsWindow(_vm.Settings.Current, _vm) { Owner = this };
+
+        _settingsWindow.Saved += () =>
         {
             _vm.Settings.Save();
             RegisterGlobalHotkeys();
             if (_vm.Settings.Current.OverlayPort != oldPort)
                 _vm.RestartOverlay(_vm.Settings.Current.OverlayPort);
-        }
+        };
+
+        _settingsWindow.Closed += (_, _) => _settingsWindow = null;
+
+        _settingsWindow.Show();
     }
 
     // ── Window lifecycle ──────────────────────────────────────────────────────

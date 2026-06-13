@@ -2,6 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:conv="clr-namespace:Ds1ItemTracker.Converters"
+        xmlns:thumb="clr-namespace:System.Windows.Controls.Primitives;assembly=PresentationFramework"
         Title="DS1 Tracker Overlay"
         Width="260" SizeToContent="Height"
         WindowStyle="None"
@@ -10,6 +11,7 @@
         Topmost="True"
         ShowInTaskbar="False"
         ResizeMode="NoResize"
+        MinWidth="140"
         Left="20" Top="20"
         Opacity="{Binding OverlayWindowOpacity}">
 
@@ -20,20 +22,46 @@
     </Window.Resources>
 
     <!-- Outer border gives the dark card look -->
-    <Border Background="{Binding OverlayCardBackground}"
-            BorderBrush="#80B8960C"
-            BorderThickness="0,0,0,1"
-            CornerRadius="3">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="1"
+                Background="{Binding OverlayCardBackground}"
+                BorderBrush="#80B8960C"
+                BorderThickness="0,0,0,1"
+                CornerRadius="3">
 
         <StackPanel>
-            <!-- Header row — stays interactive even in click-through mode -->
-            <Border x:Name="HeaderRow"
+            <!-- Total progress row — topmost -->
+            <Border x:Name="TotalRow"
                     Background="#CC0D0D0D"
                     BorderBrush="#40B8960C"
                     BorderThickness="1,1,1,0"
                     CornerRadius="3,3,0,0"
-                    Padding="8,5"
+                    Padding="8,4"
                     MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                <Grid>
+                    <TextBlock Text="Total:"
+                               Foreground="#FF888070"
+                               FontSize="{Binding OverlayFontSize}"
+                               HorizontalAlignment="Left"/>
+                    <TextBlock Text="{Binding TotalProgress}"
+                               Foreground="#FFB8960C" FontWeight="Bold"
+                               FontSize="{Binding OverlayFontSize}"
+                               HorizontalAlignment="Right"/>
+                </Grid>
+            </Border>
+
+            <!-- Area header row — drag handle, pin, close -->
+            <Border x:Name="HeaderRow"
+                    Background="#AA141414"
+                    BorderBrush="#40B8960C"
+                    BorderThickness="1,0,1,0"
+                    Padding="8,5">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -45,12 +73,12 @@
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <TextBlock Text="{Binding SelectedArea.Name}"
                                    Foreground="#FFD4AC10"
-                                   FontSize="11" FontWeight="Bold"
+                                   FontSize="{Binding OverlayFontSize}" FontWeight="Bold"
                                    TextTrimming="CharacterEllipsis"
                                    VerticalAlignment="Center"/>
                         <TextBlock Text="{Binding SelectedArea.ProgressLabel}"
                                    Foreground="#FF888070"
-                                   FontSize="10" Margin="6,0,0,0"
+                                   FontSize="{Binding OverlayFontSize}" Margin="6,0,0,0"
                                    VerticalAlignment="Center"/>
                     </StackPanel>
 
@@ -80,28 +108,85 @@
                     CornerRadius="0,0,3,3"
                     Padding="8,4,8,6">
                 <ItemsControl ItemsSource="{Binding SelectedArea.Items}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="{Binding OverlayColumns}"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Grid Margin="0,1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="14"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="{Binding StatusIcon}"
-                                           Foreground="{Binding DisplayState, Converter={StaticResource StateToFg}}"
-                                           FontSize="9" HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"/>
-                                <TextBlock Grid.Column="1"
-                                           Text="{Binding FullName}"
-                                           Foreground="{Binding DisplayState, Converter={StaticResource StateToFg}}"
-                                           TextDecorations="{Binding DisplayState, Converter={StaticResource StateToStrike}}"
-                                           FontSize="11" TextTrimming="CharacterEllipsis"
-                                           VerticalAlignment="Center"/>
-                            </Grid>
+                            <TextBlock Text="{Binding FullName}"
+                                       Foreground="{Binding DataContext.OverlayFontBrush,
+                                                   RelativeSource={RelativeSource AncestorType=Window}}"
+                                       TextDecorations="{Binding DisplayState, Converter={StaticResource StateToStrike}}"
+                                       FontSize="{Binding DataContext.OverlayFontSize,
+                                                  RelativeSource={RelativeSource AncestorType=Window}}"
+                                       TextAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       TextTrimming="CharacterEllipsis"
+                                       VerticalAlignment="Center"
+                                       Margin="0,1">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding DisplayState}" Value="2">
+                                                <Setter Property="Opacity" Value="0.45"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </Border>
         </StackPanel>
-    </Border>
+        </Border>
+
+        <!-- left-edge resize grip -->
+        <thumb:Thumb Grid.Column="0"
+                     Cursor="SizeWE"
+                     DragDelta="ResizeLeftThumb_DragDelta">
+            <thumb:Thumb.Template>
+                <ControlTemplate TargetType="thumb:Thumb">
+                    <Border Background="#18B8960C"
+                            Width="8"
+                            CornerRadius="0,3,3,0">
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#55B8960C"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                    </Border>
+                </ControlTemplate>
+            </thumb:Thumb.Template>
+        </thumb:Thumb>
+
+        <!-- Right-edge resize grip -->
+        <thumb:Thumb Grid.Column="2"
+                     Cursor="SizeWE"
+                     DragDelta="ResizeThumb_DragDelta">
+            <thumb:Thumb.Template>
+                <ControlTemplate TargetType="thumb:Thumb">
+                    <Border Background="#18B8960C"
+                            Width="8"
+                            CornerRadius="0,3,3,0">
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#55B8960C"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                    </Border>
+                </ControlTemplate>
+            </thumb:Thumb.Template>
+        </thumb:Thumb>
+    </Grid>
 </Window>

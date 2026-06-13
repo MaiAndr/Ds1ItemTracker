@@ -15,6 +15,9 @@ public sealed class AppSettings
     [JsonPropertyName("floatTop")]
     public double FloatTop { get; set; } = 20;
 
+    [JsonPropertyName("floatWidth")]
+    public double FloatWidth { get; set; } = 0; // 0 = use default
+
     [JsonPropertyName("gameFolder")]
     public string GameFolder { get; set; } = string.Empty;
 
@@ -26,6 +29,24 @@ public sealed class AppSettings
 
     [JsonPropertyName("overlayPort")]
     public int OverlayPort { get; set; } = 7373;
+
+    [JsonPropertyName("overlayFontSize")]
+    public int OverlayFontSize { get; set; } = 11;
+
+    [JsonPropertyName("overlayFontColor")]
+    public string OverlayFontColor { get; set; } = "#E0D5C0";
+
+    [JsonPropertyName("overlayFontOpacity")]
+    public int OverlayFontOpacity { get; set; } = 100;
+
+    [JsonPropertyName("overlayBgColor")]
+    public string OverlayBgColor { get; set; } = "#0D0D0D";
+
+    [JsonPropertyName("overlayBgOpacityPercent")]
+    public int OverlayBgOpacityPercent { get; set; } = 55;
+
+    [JsonPropertyName("overlayColumns")]
+    public int OverlayColumns { get; set; } = 1;
 }
 
 public sealed class SettingsService
@@ -38,6 +59,7 @@ public sealed class SettingsService
 
     private readonly string _projectPath;
     private readonly string _exePath;
+    private readonly string _appDataPath;
 
     public AppSettings Current { get; private set; } = new();
 
@@ -45,13 +67,18 @@ public sealed class SettingsService
     {
         _projectPath = Path.Combine(projectRoot, "settings.json");
         _exePath     = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "settings.json");
+        var appDataDir = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+            "Ds1ItemTracker");
+        Directory.CreateDirectory(appDataDir);
+        _appDataPath = Path.Combine(appDataDir, "settings.json");
         Load();
     }
 
     private void Load()
     {
-        // Try project root first, then exe dir
-        foreach (var path in new[] { _projectPath, _exePath })
+        // Priority: AppData → project root → exe dir
+        foreach (var path in new[] { _appDataPath, _projectPath, _exePath })
         {
             if (!File.Exists(path)) continue;
             try
@@ -67,12 +94,10 @@ public sealed class SettingsService
     public void Save()
     {
         string json = JsonSerializer.Serialize(Current, _opts);
+        // Always write to AppData (primary)
+        try { File.WriteAllText(_appDataPath, json); } catch { }
+        // Also keep project root copy for dev convenience
         try { File.WriteAllText(_projectPath, json); } catch { }
-        if (!string.Equals(_projectPath, _exePath,
-                StringComparison.OrdinalIgnoreCase))
-        {
-            try { File.WriteAllText(_exePath, json); } catch { }
-        }
     }
 
     // ── Game folder helpers ───────────────────────────────────────────────────
