@@ -118,15 +118,87 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
         }
     }
 
+    private int _overlayFontSize = 11;
+    public int OverlayFontSize
+    {
+        get => _overlayFontSize;
+        set
+        {
+            _overlayFontSize = Math.Clamp(value, 7, 32);
+            OnPropertyChanged();
+            PushOverlayState();
+            Settings.Current.OverlayFontSize = _overlayFontSize;
+            Settings.Save();
+        }
+    }
+
+    public string OverlayFontColor
+    {
+        get => Settings.Current.OverlayFontColor;
+        set { Settings.Current.OverlayFontColor = value; OnPropertyChanged(); OnPropertyChanged(nameof(OverlayFontBrush)); PushOverlayState(); Settings.Save(); }
+    }
+
+    public int OverlayFontOpacity
+    {
+        get => Settings.Current.OverlayFontOpacity;
+        set { Settings.Current.OverlayFontOpacity = Math.Clamp(value, 0, 100); OnPropertyChanged(); OnPropertyChanged(nameof(OverlayFontBrush)); PushOverlayState(); Settings.Save(); }
+    }
+
+    public string OverlayBgColor
+    {
+        get => Settings.Current.OverlayBgColor;
+        set { Settings.Current.OverlayBgColor = value; OnPropertyChanged(); OnPropertyChanged(nameof(OverlayCardBackground)); PushOverlayState(); Settings.Save(); }
+    }
+
+    public int OverlayBgOpacityPercent
+    {
+        get => Settings.Current.OverlayBgOpacityPercent;
+        set { Settings.Current.OverlayBgOpacityPercent = Math.Clamp(value, 0, 100); OnPropertyChanged(); OnPropertyChanged(nameof(OverlayCardBackground)); PushOverlayState(); Settings.Save(); }
+    }
+
+    public int OverlayColumns
+    {
+        get => Settings.Current.OverlayColumns;
+        set { Settings.Current.OverlayColumns = Math.Max(1, value); OnPropertyChanged(); PushOverlayState(); Settings.Save(); }
+    }
     // Window-level opacity for the floating WPF overlay (0.1–1.0)
     public double OverlayWindowOpacity => Math.Max(0.1, _overlayBgOpacity / 100.0);
 
-    // Card background brush driven by the same opacity slider
-    public System.Windows.Media.Brush OverlayCardBackground =>
-        new System.Windows.Media.SolidColorBrush(
-            System.Windows.Media.Color.FromArgb(
-                (byte)(Math.Clamp(_overlayBgOpacity * 2.4, 30, 230)),
-                13, 13, 13));
+    // Card background brush from bg color + opacity settings
+    public System.Windows.Media.Brush OverlayCardBackground
+    {
+        get
+        {
+            var hex = Settings.Current.OverlayBgColor.TrimStart('#');
+            byte r = 13, g = 13, b = 13;
+            if (hex.Length == 6) {
+                r = Convert.ToByte(hex[..2], 16);
+                g = Convert.ToByte(hex[2..4], 16);
+                b = Convert.ToByte(hex[4..6], 16);
+            }
+            byte a = (byte)(Settings.Current.OverlayBgOpacityPercent / 100.0 * 255);
+            return new System.Windows.Media.SolidColorBrush(
+                System.Windows.Media.Color.FromArgb(a, r, g, b));
+        }
+    }
+
+    // Font color brush from font color + opacity settings
+    public System.Windows.Media.Brush OverlayFontBrush
+    {
+        get
+        {
+            var hex = Settings.Current.OverlayFontColor.TrimStart('#');
+            byte r = 0xE0, g = 0xD5, b = 0xC0;
+            if (hex.Length == 6) {
+                r = Convert.ToByte(hex[..2], 16);
+                g = Convert.ToByte(hex[2..4], 16);
+                b = Convert.ToByte(hex[4..6], 16);
+            }
+            byte a = (byte)(Settings.Current.OverlayFontOpacity / 100.0 * 255);
+            return new System.Windows.Media.SolidColorBrush(
+                System.Windows.Media.Color.FromArgb(a, r, g, b));
+        }
+    }
 
     // ── Overall progress ─────────────────────────────────────────────────────
     public int TotalItems    => Areas.Sum(a => a.TotalItems);
@@ -171,6 +243,7 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
 
         // Restore persisted opacity
         _overlayBgOpacity = Settings.Current.OverlayOpacity;
+        _overlayFontSize  = Settings.Current.OverlayFontSize;
 
         // Auto-detect game folder if not yet saved
         if (string.IsNullOrEmpty(Settings.Current.GameFolder))
@@ -650,11 +723,18 @@ public sealed class MainViewModel : INotifyPropertyChanged, IDisposable
             .ToList();
         _overlay.UpdateState(new OverlaySnapshot
         {
-            AreaName  = _selectedArea.Name,
-            PickedUp  = _selectedArea.PickedUpCount,
-            Total     = _selectedArea.TotalItems,
-            BgOpacity = _overlayBgOpacity / 100.0,
-            Items     = items
+            AreaName      = _selectedArea.Name,
+            PickedUp      = _selectedArea.PickedUpCount,
+            Total         = _selectedArea.TotalItems,
+            TotalPickedUp = TotalPickedUp,
+            TotalItems    = TotalItems,
+            BgOpacity     = Settings.Current.OverlayBgOpacityPercent / 100.0,
+            FontSize      = _overlayFontSize,
+            FontColor     = Settings.Current.OverlayFontColor,
+            FontOpacity   = Settings.Current.OverlayFontOpacity,
+            BgColor       = Settings.Current.OverlayBgColor,
+            Columns       = Settings.Current.OverlayColumns,
+            Items         = items
         });
     }
 

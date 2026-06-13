@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Interop;
 using Ds1ItemTracker.ViewModels;
@@ -31,11 +32,14 @@ public partial class FloatingOverlay : Window
         Top  = s.FloatTop;
     }
 
+    // Restore last position and width
     protected override void OnSourceInitialized(EventArgs e)
     {
         base.OnSourceInitialized(e);
         _hwndSource = HwndSource.FromHwnd(new WindowInteropHelper(this).Handle);
         _hwndSource?.AddHook(WndProc);
+        var s = _vm.Settings.Current;
+        if (s.FloatWidth > 0) Width = s.FloatWidth;
     }
 
     // Save position whenever the window is moved
@@ -61,10 +65,10 @@ public partial class FloatingOverlay : Window
 
             // Window-relative Y in physical pixels
             double winRelY = screenY - Top * dpiY;
-            // Header height in physical pixels
-            double headerPx = HeaderRow.ActualHeight * dpiY;
+            // Keep both the total bar and the header row (with pin/close buttons) interactive
+            double interactivePx = (TotalRow.ActualHeight + HeaderRow.ActualHeight) * dpiY;
 
-            if (winRelY > headerPx)
+            if (winRelY > interactivePx)
             {
                 handled = true;
                 return new IntPtr(HTTRANSPARENT);
@@ -77,6 +81,25 @@ public partial class FloatingOverlay : Window
     private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
         if (!_clickThrough) DragMove();
+    }
+
+    private void ResizeThumb_DragDelta(object sender, DragDeltaEventArgs e)
+    {
+        double newWidth = Math.Max(MinWidth, Width + e.HorizontalChange);
+        Width = newWidth;
+        _vm.Settings.Current.FloatWidth = newWidth;
+        _vm.Settings.Save();
+    }
+
+    private void ResizeLeftThumb_DragDelta(object sender, DragDeltaEventArgs e)
+    {
+        double newWidth = Math.Max(MinWidth, Width - e.HorizontalChange);
+        if (newWidth == MinWidth) return;
+        Left += Width - newWidth;
+        Width = newWidth;
+        _vm.Settings.Current.FloatWidth = newWidth;
+        _vm.Settings.Current.FloatLeft  = Left;
+        _vm.Settings.Save();
     }
 
     private void Close_Click(object sender, RoutedEventArgs e) => Hide();
